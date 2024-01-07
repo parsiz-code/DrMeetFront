@@ -1,27 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300&display=swap'); */
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'VazirMatn';
+  src: url('/fonts/Vazirmatn-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --lighterBlue: '#00DAF5',
+  --lightBlue: '#009BE0',
+  --darkBlue1: '#004fcd'
+  --darkBlue2: '#005EBD'
+}
+
+* {
+  direction: rtl;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Vazirmatn' !important;
+}
+
+.colorBackground90{
+  background: linear-gradient(90deg, rgba(0,218,245,1) 0%, rgba(0,79,205,1) 100%); 
+}
+.colorBackground180{
+  background: linear-gradient(180deg, rgba(0,218,245,1) 0%, rgba(0,79,205,0) 50%, rgba(0,79,205,0) 100%); 
+}
+.colorBackground200{
+  background: linear-gradient(200deg, rgba(0,218,245,1) 0%, rgba(0,79,205,1) 100%); 
+}
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+/* body {
+} */
