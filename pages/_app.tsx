@@ -6,7 +6,6 @@ import NavBar from "@/components/Modules/Navbar/Navbar";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider>
-      {/* <NavBar /> */}
       <Component {...pageProps} />
     </NextUIProvider>
   );

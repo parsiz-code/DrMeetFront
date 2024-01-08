@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -10,15 +10,23 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/react";
+import style from "@/styles/navbar.module.css";
 import Image from "next/image";
 import { Box } from "@mui/material";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import PhoneEnabledOutlinedIcon from '@mui/icons-material/PhoneEnabledOutlined';
-import VaccinesOutlinedIcon from '@mui/icons-material/VaccinesOutlined';
-import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
+import VaccinesOutlinedIcon from "@mui/icons-material/VaccinesOutlined";
+import VpnKeyOutlinedIcon from "@mui/icons-material/VpnKeyOutlined";
+import SearchIcon from "@mui/icons-material/Search";
+import { usePathname } from 'next/navigation'
 
-export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+interface IProps {
+  routeName?: string;
+}
+const NavBar: FC<IProps> = ({ routeName }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [openSearchBox, setOpenSearchBox] = useState<boolean>(false);
+  const pathName = usePathname()
 
   const menuItems = [
     "Profile",
@@ -34,60 +42,79 @@ export default function NavBar() {
   ];
 
   return (
-    <Box>
-      <Box>
-        <span>
+    <Box className="">
+      <Box className="py-2 mx-auto max-w-6xl px-2 sm:px-6 lg:px-8 text-[0.8rem] bg-[#00DAF5] rounded-b-lg flex justify-between items-center">
+        <span className="flex items-center text-white gap-4">
           <span>
-            <AccessTimeIcon/>
-            
+            <AccessTimeIcon className="text-[0.9rem] ml-1" />
+            ساعت کاری: همه روزه شنبه تا پنجشنبه ساعت ۸ تا ۲۰
           </span>
-          <span></span>
+          <span className="flex items-center">
+            <PhoneEnabledOutlinedIcon className="text-[0.9rem] ml-1" />
+            <Link href="tel:+98" className="text-[0.9rem] text-white">
+              ۰۱۱-۳۳۲۲۴۴۵۵
+            </Link>
+            <span className="mx-1">-</span>
+            <Link href="tel:+98" className="text-[0.9rem] text-white">
+              ۰۱۱-۳۳۶۶۷۷۸۸
+            </Link>
+          </span>
         </span>
 
-        <span>
-          <span></span>
-          <span></span>
+        <span className="hidden md:flex items-center gap-4">
+          <Link href="#" className="!text-white hover:!text-amber-500">
+            <VaccinesOutlinedIcon className="!text-[0.9rem] ml-1" />
+            <span className="text-[0.8rem]"> دریافت نوبت</span>
+          </Link>
+          <Link href="#" className="!text-white hover:!text-amber-500">
+            <VpnKeyOutlinedIcon className="!text-[0.9rem] ml-1" />
+            <span className="text-[0.8rem]">ورود به سایت</span>
+          </Link>
         </span>
       </Box>
-      <Navbar onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent>
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
-          />
-          <NavbarBrand>
-            {/* <Image
-              src="/public/images/drmeet1.png"
-              alt="دکتر میت"
-              width={200}
-              height={200}
-            /> */}
-            <p className="font-bold text-inherit">DrMeet</p>
-          </NavbarBrand>
-        </NavbarContent>
+      <Navbar onMenuOpenChange={setIsMenuOpen} className="!bg-transparent pt-0 mt-0">
+        <Box className="flex items-center justify-between w-full bg-[#00DAF5] -translate-y-1 py-2 px-4 rounded-b-lg">
+          <NavbarContent>
+            <NavbarMenuToggle
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              className="sm:hidden"
+            />
+            <NavbarBrand>
+              <Image
+                src="/images/drmeet1.png"
+                alt="دکتر میت"
+                width={50}
+                height={50}
+              />
+              {/* <p className="font-bold text-inherit">DrMeet</p> */}
+            </NavbarBrand>
+          </NavbarContent>
 
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem>
-            <Link href="#" className="text-black hover:text-amber-400">
-              صفحه اصلی
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link href="#" className="text-black hover:text-amber-400">
-              پزشکان
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="#" className="text-black hover:text-amber-400">
-              مجلسه سلامت
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
-          </NavbarItem>
-        </NavbarContent>
+          <NavbarContent className="hidden sm:flex gap-4" justify="center">
+            <NavbarItem isActive={pathName === routeName ? true : false}>
+              <Link href="/" className="text-white hover:text-amber-400">
+                صفحه اصلی
+              </Link>
+            </NavbarItem>
+            <NavbarItem isActive={pathName === routeName ? true : false}>
+              <Link href="/doctors" className="text-white hover:text-amber-400">
+                پزشکان
+              </Link>
+            </NavbarItem>
+            <NavbarItem isActive={pathName === routeName ? true : false}>
+              <Link href="/healthMagazine" className="text-white hover:text-amber-400">
+                مجله سلامت
+              </Link>
+            </NavbarItem>
+          </NavbarContent>
+          <NavbarContent justify="end">
+            <NavbarItem className="hidden lg:flex">
+              <Link href="#" className="text-white">
+                <SearchIcon className="font-bold"/>
+              </Link>
+            </NavbarItem>
+          </NavbarContent>
+        </Box>
         <NavbarMenu>
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
@@ -111,4 +138,6 @@ export default function NavBar() {
       </Navbar>
     </Box>
   );
-}
+};
+
+export default NavBar;

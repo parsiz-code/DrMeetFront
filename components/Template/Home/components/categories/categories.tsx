@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import { Link } from "@nextui-org/react";
 import Image from "next/image";
+import Banner from "../banner/banner";
 
 interface ICategory {
   icon: string;
@@ -72,15 +73,28 @@ const Categories = () => {
     },
   ];
   return (
-    <div>
-      <Grid container className="w-full px-16 py-20">
+    <div className="relative">
+      <div className="absolute -top-[8rem]">
+        <Banner />
+      </div>
+      <Grid container className="w-full px-16 pt-64 pb-36 bg-slate-100">
         <Grid item xs={12} className="mb-10">
           <h1 className="text-center text-[1.5rem] font-bold">دسته بندی ها</h1>
         </Grid>
         <Grid item container spacing={2}>
           {categoriesList.map((item, index) => (
-            <Grid item xs={3} key={index} className="p-0 hover:!colorBackground200 hover:!-translate-y-2 transition-all">
-              <Link href={item.link} className="flex flex-col gap-3 justify-center items-center rounded-lg shadow-lg py-10 hover:!colorBackground200">
+            <Grid
+              item
+              xs={6}
+              sm={6}
+              md={3}
+              key={index}
+              className="p-0 hover:!-translate-y-2 transition-all"
+            >
+              <Link
+                href={item.link}
+                className="flex flex-col gap-3 justify-center items-center rounded-lg shadow-lg px-2 py-10 hover:!bg-gradient-to-r hover:!from-[#004fcd99] hover:!to-[#00DAF599] border text-center"
+              >
                 <Image src={item.icon} alt={item.text} height={50} width={50} />
                 <p className="text-black">{item.text}</p>
               </Link>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Service = () => {
   return (
-    <div className="pt-28">
+    <div className="pt-28 pb-40">
       <Grid container className="w-full px-16 mb-5">
         <Grid
           item
