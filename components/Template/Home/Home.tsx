@@ -2,7 +2,8 @@ import NavBar from "@/components/Modules/Navbar/Navbar";
 import Categories from "./components/categories/categories";
 import Header from "./components/header/Header";
 import Service from "./components/service/service";
-import YourDoctors from "./yourDoctors/yourDoctors";
+import YourDoctors from "./components/yourDoctors/yourDoctors";
+import Reservation from "./components/reservation/reservation";
 
 const HomeElement = () => {
   return (
@@ -12,6 +13,7 @@ const HomeElement = () => {
       <Service/>
       <Categories/>
       <YourDoctors/>
+      <Reservation/>
     </>
   );
 };
