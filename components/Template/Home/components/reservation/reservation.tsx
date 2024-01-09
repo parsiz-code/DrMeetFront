@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { Button, Input } from "@nextui-org/react";
 import React, { useState } from "react";
+import style from './style.module.css'
 
 interface IItem {
   label: string;
@@ -58,22 +59,22 @@ const Reservation = () => {
   };
 
   return (
-    <div>
-      <Grid container className="bg-[##D4D3D3] w-full px-16">
+    <div className="!bg-[#d4d3d3]">
+      <Grid container className=" w-full px-16">
         <Grid
           item
           xs={12}
           sm={12}
           md={6}
           lg={6}
-          className="flex justify-center items-center h-30 md:h-[30rem]"
+          className="flex justify-center items-center h-30 md:h-[30rem] bg-transparent"
         >
-          <h2 className="text-[1.5rem] font-bold w-72 text-center">
+          <h2 className="text-[1.5rem] font-bold w-72 text-center translate-x-0 md:translate-x-16">
             با خدمات پزشکی آنلاین سلامتی خود را تضمین کنید
           </h2>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={6} className="relative w-full">
-          <Box className="h-[32rem] bg-[#005EBD] absolute flex flex-col items-center gap-3 w-full px-20 pt-20 pb-24">
+        <Grid item xs={12} sm={12} md={6} lg={6} className={`relative w-full overflow bg-transparent`}>
+          <div className={`h-[32rem] bg-[#005EBD] absolute flex flex-col items-center gap-3 w-full px-20 pt-20 pb-24 scale-100 md:scale-110 md:-translate-y-5`}>
             <Input type="text" placeholder="نام و نام خانوادگی" size="sm" className="py-1" />
             <DatePickerJalaliUiKit
               disablePast={false}
@@ -90,7 +91,7 @@ const Reservation = () => {
                   backgroundColor: '#fff'
                 }}
               >
-                <MenuItem value="0">انتخاب تخصص</MenuItem>
+                <MenuItem value="0" className="text-gray-500">انتخاب تخصص</MenuItem>
                 {data.map((item, index) => (
                   <MenuItem key={index} value={item.value}>
                     {item.label}
@@ -107,7 +108,7 @@ const Reservation = () => {
                   backgroundColor: '#fff'
                 }}
               >
-                <MenuItem value="0">انتخاب پزشک</MenuItem>
+                <MenuItem value="0" className="text-gray-500">انتخاب پزشک</MenuItem>
                 {doctorData.map((item, index) => (
                   <MenuItem key={index} value={item.value}>
                     {item.label}
@@ -117,8 +118,8 @@ const Reservation = () => {
             </FormControl>
             <Input type="text" placeholder="پیام شما" size="sm" />
 
-            <Button className="bg-[#75BAFF] w-[10rem]">رزرو قرار ملاقات</Button>
-          </Box>
+            <Button className="bg-[#75BAFF] px-20 py-5">رزرو قرار ملاقات</Button>
+          </div>
         </Grid>
       </Grid>
     </div>
