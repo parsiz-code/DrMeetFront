@@ -5,6 +5,8 @@ import Service from "./components/service/service";
 import YourDoctors from "./components/yourDoctors/yourDoctors";
 import Reservation from "./components/reservation/reservation";
 import JoinUs from "./components/joinUs/joinUs";
+import Question from "./components/Question/Question";
+import Comments from "./components/comments/comments";
 
 const HomeElement = () => {
   return (
@@ -16,6 +18,8 @@ const HomeElement = () => {
       <YourDoctors />
       <Reservation />
       <JoinUs />
+      <Question/>
+      <Comments/>
     </>
   );
 };

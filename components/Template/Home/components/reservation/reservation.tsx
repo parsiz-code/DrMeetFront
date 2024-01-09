@@ -91,7 +91,7 @@ const Reservation = () => {
                   backgroundColor: '#fff'
                 }}
               >
-                <MenuItem value="0" className="text-gray-500">انتخاب تخصص</MenuItem>
+                <MenuItem value="0" className="text-gray-500" disabled={true}>انتخاب تخصص</MenuItem>
                 {data.map((item, index) => (
                   <MenuItem key={index} value={item.value}>
                     {item.label}
@@ -108,7 +108,7 @@ const Reservation = () => {
                   backgroundColor: '#fff'
                 }}
               >
-                <MenuItem value="0" className="text-gray-500">انتخاب پزشک</MenuItem>
+                <MenuItem value="0" className="text-gray-500" disabled={true}>انتخاب پزشک</MenuItem>
                 {doctorData.map((item, index) => (
                   <MenuItem key={index} value={item.value}>
                     {item.label}

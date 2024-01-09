@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import Image from "next/image";
+import { Image } from "@nextui-org/react";
 
 const Banner = () => {
   return (
@@ -15,7 +15,7 @@ const Banner = () => {
                 </Box>
             </Grid>
             <Grid item xs={4} sm={4} md={4} lg={4} className="flex justify-center items-center">
-                <Image alt="bannerImage" width={300} height={300} src='/images/health.png'/>
+                <Image src='/images/health.png'/>
             </Grid>
         </Grid>
       </Box>
