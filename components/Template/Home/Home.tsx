@@ -7,6 +7,7 @@ import Reservation from "./components/reservation/reservation";
 import JoinUs from "./components/joinUs/joinUs";
 import Question from "./components/Question/Question";
 import Comments from "./components/comments/comments";
+import Articles from "./components/articles/articles";
 
 const HomeElement = () => {
   return (
@@ -20,6 +21,7 @@ const HomeElement = () => {
       <JoinUs />
       <Question/>
       <Comments/>
+      <Articles/>
     </>
   );
 };

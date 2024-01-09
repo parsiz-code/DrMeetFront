@@ -6,10 +6,11 @@ import FormatQuoteOutlinedIcon from '@mui/icons-material/FormatQuoteOutlined';
 function CommentItem() {
   return (
     <SwiperSlide>
-      <Box className="relative">
+      <Box className="relative bg-[#f17732]">
         <Box className="absolute">
           <FormatQuoteOutlinedIcon/>
         </Box>
+        Slide 1
       </Box>
     </SwiperSlide>
   )
