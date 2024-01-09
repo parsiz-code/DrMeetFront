@@ -27,18 +27,16 @@ const DatePickerJalaliUiKit: FC<IProps> = ({
   ...props
 }) => {
   return (
-    <Box
-      className={`${className} relative !rmdp-container`}
-    >
-      {label && (
+    <Box className={`${className} relative w-full`}>
+      {/* {label && (
         <InputLabel className="!absolute !top-[-1.1rem] !right-2 z-100 !px-1 !bg-inherit !text-[0.8rem]">
           {label}
         </InputLabel>
-      )}
+      )} */}
       <DatePicker
         calendar={persian}
         locale={persian_fa}
-        calendarPosition="bottom-right"
+        calendarPosition="bottom-center"
         value={new DateObject(value)}
         onChange={(val: DateObject) => {
           onChange(new Date(new Date(val?.toDate()).setHours(20, 30)));
@@ -53,7 +51,14 @@ const DatePickerJalaliUiKit: FC<IProps> = ({
         }
         maxDate={maxDate ? maxDate : undefined}
         disabled={disabled}
-        className={`${className}`}
+        monthYearSeparator="|"
+        // className=""
+        // inputClass={``}
+        style={{
+          width: '100%',
+          padding: '1.45rem 0.7rem',
+          borderRadius: '0.5rem'
+        }}
       />
     </Box>
   );
