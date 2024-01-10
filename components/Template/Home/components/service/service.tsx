@@ -1,3 +1,4 @@
+import { toPersianDigits } from "@/helper/dateTimeHelper";
 import { Grid } from "@mui/material";
 import Image from "next/image";
 
@@ -30,7 +31,7 @@ const Service = () => {
         >
           <p className="flex flex-col justify-center items-center gap-3">
             <span className="text-amber-400 text-[1.6rem] font-bold">
-              خدمات 24 ساعته
+              {toPersianDigits('خدمات 24 ساعته')}
             </span>
             <span className="font-bold text-[1.2rem]">
               ما بالاترین سطح مراقبت را ارائه میدهیم

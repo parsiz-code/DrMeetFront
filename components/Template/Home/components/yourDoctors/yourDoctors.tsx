@@ -8,10 +8,10 @@ import DoctorItem from "./doctorItem";
 const YourDoctors = () => {
   return (
     <div className="relative w-full bg-slate-200">
-      <div className="absolute -top-10 w-full">
+      <div className="lg:absolute -top-10 w-full">
         <OptionsLine />
       </div>
-      <Grid container className="w-full px-16 py-32">
+      <Grid container className="w-full px-2 lg:px-16 py-16 lg:py-32">
         <Grid
           item
           xs={12}
@@ -24,7 +24,7 @@ const YourDoctors = () => {
             پزشکان همراه شما
           </h1>
         </Grid>
-        <Grid item container xs={12} sm={12} md={6} lg={6} rowSpacing={3}>
+        <Grid item container xs={12} sm={12} md={6} lg={6} rowSpacing={{lg: 3}}>
           <Grid item xs={12} className="text-center">
             <span className="text-gray-500">فعال ترین پزشکان</span>
           </Grid>
@@ -38,13 +38,13 @@ const YourDoctors = () => {
           <Grid item xs={12} sm={12} md={12} lg={12} className="w-full flex justify-center items-center">
             <Button
               href="#"
-              className="bg-[#00DAF5] text-white"
+              className="bg-[#007dfe] text-white"
             >
               لیست فعال ترین پزشکان
             </Button>
           </Grid>
         </Grid>
-        <Grid item container xs={12} sm={12} md={6} lg={6} rowSpacing={3}>
+        <Grid item container xs={12} sm={12} md={6} lg={6} rowSpacing={{lg: 3}} className="mt-14 lg:mt-0">
           <Grid item xs={12} className="text-center">
             <span className="text-gray-500">جدید ترین پزشکان</span>
           </Grid>
@@ -58,7 +58,7 @@ const YourDoctors = () => {
           <Grid item xs={12} sm={12} md={12} lg={12} className="w-full flex justify-center items-center">
             <Button
               href="#"
-              className=" bg-[#00DAF5] text-white"
+              className=" bg-[#007dfe] text-white"
             >
               لیست جدید ترین پزشکان
             </Button>

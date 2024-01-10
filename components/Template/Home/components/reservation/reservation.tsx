@@ -73,8 +73,8 @@ const Reservation = () => {
             با خدمات پزشکی آنلاین سلامتی خود را تضمین کنید
           </h2>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={6} className={`relative w-full overflow bg-transparent`}>
-          <div className={`h-[32rem] bg-[#005EBD] absolute flex flex-col items-center gap-3 w-full px-20 pt-20 pb-24 scale-100 md:scale-110 md:-translate-y-5`}>
+        <Grid item xs={12} sm={12} md={6} lg={6} className={`relative w-full overflow bg-transparent p-5`}>
+          <div className={`h-[32rem] bg-[#007dfe] flex flex-col items-center gap-3 w-full px-20 pt-20 pb-24 rounded-lg`}>
             <Input type="text" placeholder="نام و نام خانوادگی" size="sm" className="py-1" />
             <DatePickerJalaliUiKit
               disablePast={false}
@@ -118,7 +118,7 @@ const Reservation = () => {
             </FormControl>
             <Input type="text" placeholder="پیام شما" size="sm" />
 
-            <Button className="bg-[#75BAFF] px-20 py-5">رزرو قرار ملاقات</Button>
+            <Button className="bg-[#a3d1ff] px-20 py-5">رزرو قرار ملاقات</Button>
           </div>
         </Grid>
       </Grid>

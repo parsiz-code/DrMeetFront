@@ -20,7 +20,7 @@ const OptionsLine = () => {
   ];
   return (
     <div className="">
-      <Grid container className="w-full px-16">
+      <Grid container className="w-full px-2 lg:px-16">
         {/* <Grid item xs={12} className="mb-10">
           <h1 className="text-center text-[1.5rem] font-bold">خدمات کلینیک</h1>
         </Grid> */}
@@ -30,9 +30,10 @@ const OptionsLine = () => {
           className="w-full text-center "
           justifyContent={"space-between"}
           alignItems={"center"}
+          rowSpacing={2}
         >
           {optionsList.map((item, index) => (
-            <Grid item xs={6} sm={6} md={4} lg={4} key={index} className="px-4">
+            <Grid item xs={12} sm={12} md={4} lg={4} key={index} className="px-4">
               <Box className="flex justify-start items-center rounded-[2rem] p-4 bg-[#005EBD]">
                 <span className="ml-10 bg-[#00DAF5] p-3 rounded-full">
                   {item.icon}

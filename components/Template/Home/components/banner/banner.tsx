@@ -4,8 +4,8 @@ import { Image } from "@nextui-org/react";
 const Banner = () => {
   return (
     <div>
-      <Box className="w-full px-16">
-        <Grid container className="colorBackground90 px-10 py-6 rounded-2xl">
+      <Box className="w-full px-2 lg:px-16">
+        <Grid container className="colorBackground90 lg:px-10 py-6 rounded-2xl">
             <Grid item xs={12} sm={12} md={8} lg={8} className="flex justify-center items-center">
                 <Box>
                     <p className="flex flex-col justify-center items-start p-10">
@@ -14,8 +14,8 @@ const Banner = () => {
                     </p>
                 </Box>
             </Grid>
-            <Grid item xs={4} sm={4} md={4} lg={4} className="flex justify-center items-center">
-                <Image src='/images/health.png'/>
+            <Grid item xs={12} sm={12} md={4} lg={4} className="flex justify-center items-center">
+                <Image src='/images/health.png' width={200}/>
             </Grid>
         </Grid>
       </Box>

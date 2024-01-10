@@ -74,10 +74,10 @@ const Categories = () => {
   ];
   return (
     <div className="relative">
-      <div className="absolute -top-[8rem]">
+      <div className="lg:absolute -top-[8rem]">
         <Banner />
       </div>
-      <Grid container className="w-full px-16 pt-64 pb-36 bg-slate-100">
+      <Grid container className="w-full px-2 lg:px-16 pt-16 lg:pt-64 pb-36 bg-slate-100">
         <Grid item xs={12} className="mb-10">
           <h1 className="text-center text-[1.5rem] font-bold">دسته بندی ها</h1>
         </Grid>
