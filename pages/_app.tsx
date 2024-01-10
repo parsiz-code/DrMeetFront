@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider>
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </NextUIProvider>
   );
 }
