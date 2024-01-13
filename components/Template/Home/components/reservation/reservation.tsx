@@ -60,7 +60,7 @@ const Reservation = () => {
 
   return (
     <div className="!bg-[#d4d3d3]">
-      <Grid container className=" w-full px-16">
+      <Grid container className=" w-full px-2 lg:px-16 pt-10 lg:pt-0">
         <Grid
           item
           xs={12}

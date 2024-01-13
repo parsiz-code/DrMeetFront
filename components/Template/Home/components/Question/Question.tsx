@@ -27,7 +27,7 @@ function Question() {
             به ما بپیوندید
           </Button>
         </Grid>
-        <Grid item xs={12} sm={12} md={6.5} lg={6.5} className="">
+        <Grid item xs={12} sm={12} md={6.5} lg={6.5} className="mt-10 lg:mt-0">
           <Accordion isCompact>
             <AccordionItem
               key="1"

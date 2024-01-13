@@ -19,9 +19,6 @@
 
 * {
   direction: rtl;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
   font-family: 'Vazirmatn' !important;
 }
 
@@ -39,6 +36,11 @@ background: linear-gradient(200deg, rgba(0,218,245,1) 21%, rgba(0,79,205,1) 100%
   width: 100%;
   height: 3rem;
   /* padding: 1rem 0 ; */
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  content: "";
+  border-radius:50%;
+  font-size:2rem !important;
 }
 
 /* .rmdp-input {

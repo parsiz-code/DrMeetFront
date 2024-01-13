@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -25,16 +25,38 @@ const Portfolio = () => {
         </Grid>
         <Grid item xs={12}>
           <Swiper
-            slidesPerView={4}
             className="flex justify-center items-center w-full"
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            navigation={true}
+            breakpoints={{
+              480: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+              1024: {
+                slidesPerView: 4,
+              },
+              1440: {
+                slidesPerView: 5,
+              },
+              1600: {
+                slidesPerView: 6,
+              },
+            }}
+            modules={[Autoplay, Navigation]}
           >
             <SwiperSlide className="p-4">
               <Card className="shadow rounded-2xl">
                 <CardContent className="">
                   <Image
-                    src="https://picsum.photos/400/200"
-                    height={200}
-                    width={400}
+                    src="/images/noPhoto.png"
+                      className="!w-full !h-48"
                   />
                 </CardContent>
               </Card>
@@ -43,9 +65,8 @@ const Portfolio = () => {
               <Card className="shadow rounded-2xl">
                 <CardContent className="">
                   <Image
-                    src="https://picsum.photos/400/200"
-                    height={200}
-                    width={400}
+                    src="/images/noPhoto.png"
+                      className="!w-full !h-48"
                   />
                 </CardContent>
               </Card>
@@ -54,9 +75,8 @@ const Portfolio = () => {
               <Card className="shadow rounded-2xl">
                 <CardContent className="">
                   <Image
-                    src="https://picsum.photos/400/200"
-                    height={200}
-                    width={400}
+                    src="/images/noPhoto.png"
+                      className="!w-full !h-48"
                   />
                 </CardContent>
               </Card>
@@ -65,9 +85,28 @@ const Portfolio = () => {
               <Card className="shadow rounded-2xl">
                 <CardContent className="">
                   <Image
-                    src="https://picsum.photos/400/200"
-                    height={200}
-                    width={400}
+                    src="/images/noPhoto.png"
+                      className="!w-full !h-48"
+                  />
+                </CardContent>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide className="p-4">
+              <Card className="shadow rounded-2xl">
+                <CardContent className="">
+                  <Image
+                    src="/images/noPhoto.png"
+                      className="!w-full !h-48"
+                  />
+                </CardContent>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide className="p-4">
+              <Card className="shadow rounded-2xl">
+                <CardContent className="">
+                  <Image
+                    src="/images/noPhoto.png"
+                      className="!w-full !h-48"
                   />
                 </CardContent>
               </Card>

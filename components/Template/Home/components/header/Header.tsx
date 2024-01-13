@@ -22,7 +22,7 @@ const Header = () => {
             </Button>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={7} lg={7} className="">
+        <Grid item xs={12} sm={12} md={7} lg={7} className="mt-4 lg:mt-0">
           <Box className="bg-[#009BE0] pt-10 lg:pt-48 px-10 lg:px-24 pb-10 lg:pb-14 rounded-[3rem] lg:!rounded-b-[3rem] lg:!rounded-t-[0rem] text-center h-96 lg:h-[40rem]">
             <p className="flex justify-center items-center gap-3 flex-col text-white rounded-lg text-[1rem] lg:text-[1.5rem] mb-10">
               <span> در هر زمان و هر مکان با پزشک خود در ارتباط باشید</span>

@@ -5,7 +5,7 @@ import React from "react";
 function JoinUs() {
   return (
     <div>
-      <Grid container className="py-20">
+      <Grid container className="py-20 px-2">
         <Grid item xs={12} className="flex justify-center items-center">
           <h2 className="text-white bg-[#007dfe] py-3 px-10 rounded-lg">
             به ما بپیوندید
