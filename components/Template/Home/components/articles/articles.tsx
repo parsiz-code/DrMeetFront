@@ -61,7 +61,7 @@ function Articles() {
                   <Box className="flex justify-center items-center">
                     <Image
                       src="/images/noPhoto.png"
-                      className="!w-full !h-64"
+                      className="!w-full !h-48"
                     />
                   </Box>
                   <Typography
@@ -113,7 +113,7 @@ function Articles() {
                 <CardContent className="">
                   <Image
                     src="/images/noPhoto.png"
-                    className="!w-full !h-64"
+                    className="!w-full !h-48"
                   />
                   <Typography
                     gutterBottom
@@ -164,7 +164,7 @@ function Articles() {
                 <CardContent className="">
                   <Image
                     src="/images/noPhoto.png"
-                    className="!w-full !h-64"
+                    className="!w-full !h-48"
                   />
                   <Typography
                     gutterBottom
@@ -215,7 +215,7 @@ function Articles() {
                 <CardContent className="">
                   <Image
                     src="/images/noPhoto.png"
-                    className="!w-full !h-64"
+                    className="!w-full !h-48"
                   />
                   <Typography
                     gutterBottom

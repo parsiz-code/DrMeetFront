@@ -17,7 +17,7 @@ interface IProps {
 }
 const DoctorAbout: FC<IProps> = ({ doctorName, rating }) => {
   return (
-    <div>
+    <div className="px-2 lg:px-5">
       <div className="bg-[#f3f3f3] rounded-xl py-5 px-6">
         <div className="flex items-center gap-10 mb-4">
           <Image

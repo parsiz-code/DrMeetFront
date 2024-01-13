@@ -7,7 +7,7 @@ function DoctorPage() {
   return (
     <>
         <DoctorOfficialPage doctorName='دکتر محسن فخری زاده مهابادی'/>   
-        <Footer/>
+        {/* <Footer/> */}
     </>
   )
 }

@@ -18,9 +18,9 @@ import { toPersianDigits } from "@/helper/dateTimeHelper";
 
 function DoctorArticles() {
   return (
-    <div>
+    <div className="px-2 lg:px-5">
       <Grid container className="w-full py-5">
-        <Grid item xs={12} className="mb-4 text-center">
+        <Grid item xs={12} className="!mb-4 text-center">
           <h2 className="font-bold">مقالات</h2>
         </Grid>
         <Grid item xs={12}>

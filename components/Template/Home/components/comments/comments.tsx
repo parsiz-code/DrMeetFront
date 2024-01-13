@@ -41,7 +41,7 @@ function Comments() {
             نظرات بیماران
           </h2>
           <h2
-            className={`text-[1.8rem] py-1 px-2 text-[#1f2278] font-bold flex flex-col items-center`}
+            className={`text-[1.8rem] py-1 px-2 text-[#1f2278] font-bold flex !flex-col items-center`}
           >
             <span className="">ببینید بیماران</span>
             <span className="">درمورد ما چه می گویند</span>
@@ -63,7 +63,7 @@ function Comments() {
           sm={12}
           md={6}
           lg={6}
-          className="flex flex-col justify-center items-center mt-10 lg:mt-0 w-full"
+          className="flex !flex-col !justify-center !items-center mt-10 lg:mt-0 w-full"
         >
           <div>
             <Swiper
@@ -97,8 +97,8 @@ function Comments() {
               
             </Swiper>
           </div>
-          <div className="flex !flex-row justify-between items-center mt-7 w-full">
-            <div className="flex items-center gap-2 contents-start">
+          <div className="flex !flex-row !justify-between !items-center mt-7 w-full">
+            <div className="flex items-center gap-2">
               <button
                 onClick={nextSlide}
                 className="bg-[#ffe3d5] py-2 px-3 rounded-md"
@@ -112,7 +112,7 @@ function Comments() {
                 <KeyboardBackspaceIcon className="text-[#f17732] text-[1.2rem]" />
               </button>
             </div>
-            <div className="contents-end">
+            <div className="">
               <h3 className="text-[#f17732]">
                 <span className="text-[0.8rem]">{toPersianDigits(6)}/</span>
                 <span className="text-[1.2rem]">{toPersianDigits(1)}</span>

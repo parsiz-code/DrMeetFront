@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 
 const NearReserve = () => {
   return (
-    <div className="">
+    <div className="px-2 lg:px-5">
       <div className="bg-[#f3f3f3] p-6 text-center leading-10 rounded-xl">
       <h6 className="text-gray-500">نزدیک ترین نوبت برای مراجعه </h6>
       <h6 className="font-bold text-[1.3rem]">

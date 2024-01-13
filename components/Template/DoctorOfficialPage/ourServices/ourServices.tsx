@@ -3,9 +3,9 @@ import ServiceItem from "./serviceItem"
 
 const OurServices = () => {
     return(
-        <div>
+        <div className="px-2 lg:px-5">
             <Grid container className="py-8 px-3">
-                <Grid item xs={12} className="mb-4 w-full text-center">
+                <Grid item xs={12} className="!mb-4 w-full text-center">
                     <h2 className="font-bold">خدمات قابل ارائه</h2>
                 </Grid>
                 <Grid item xs={12} className="flex justify-center items-center gap-2 flex-wrap">

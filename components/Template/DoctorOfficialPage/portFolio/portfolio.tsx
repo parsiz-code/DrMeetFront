@@ -19,7 +19,7 @@ import { toPersianDigits } from "@/helper/dateTimeHelper";
 const Portfolio = () => {
   return (
     <div className="my-4">
-      <Grid container className="w-full py-5">
+      <Grid container className="w-full py-5 overflow-hidden">
         <Grid item xs={12} className="mb-4 text-center">
           <h2 className="font-bold">تصاویر / نمونه کار</h2>
         </Grid>

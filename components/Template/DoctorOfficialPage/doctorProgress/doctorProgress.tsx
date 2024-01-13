@@ -16,7 +16,7 @@ const DoctorProgress: FC<IProps> = ({
   fourthValue = 4.7,
 }) => {
   return (
-    <div>
+    <div className="px-2 lg:px-5">
       <Grid container className="my-4 py-5 px-6 rounded-xl border">
         <Grid item xs={12} className="mb-4 w-full">
           <h2 className="font-bold py-2">نظرات درمورد</h2>

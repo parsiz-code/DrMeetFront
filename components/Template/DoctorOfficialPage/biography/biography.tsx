@@ -2,9 +2,9 @@ import { Grid } from "@mui/material";
 
 const Biography = () => {
   return (
-    <div>
+    <div className="px-2 lg:px-5">
       <Grid container className="my-4">
-        <Grid item xs={12} className="mb-4  w-full text-center">
+        <Grid item xs={12} className="!mb-4  w-full text-center">
           <h2 className="font-bold py-2">بیوگرافی</h2>
         </Grid>
         <Grid item xs={12} className="bg-[#f3f3f3] rounded-xl py-5 px-6 ">

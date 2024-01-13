@@ -12,7 +12,7 @@ const DoctorDetailBar: FC<IProps> = ({doctorName}) => {
         <Grid container className='px-10 py-6'>
             <Grid item xs={12} sm={9} md={9} lg={9}>
                 <h1 className='mb-2 text-[1.2rem] font-bold'>{doctorName}</h1>
-                <h2 className='text-[1rem] text-gray-700'>فوق تخصص مغز و اعصاب </h2>
+                <h2 className='text-[1rem] !text-gray-700 !bg-transparent'>فوق تخصص مغز و اعصاب </h2>
             </Grid>
             <Grid item xs={12} sm={3} md={3} lg={3} className='hidden md:block'>
                 <Image src='/images/drmeet final1.png' width={150}/>

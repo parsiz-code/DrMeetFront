@@ -28,7 +28,7 @@ const YourDoctors = () => {
           <Grid item xs={12} className="text-center">
             <span className="text-gray-500">فعال ترین پزشکان</span>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} className="p-10 flex flex-col gap-2 justify-start">
+          <Grid item xs={12} sm={12} md={12} lg={12} className="p-10 flex !flex-col gap-2 justify-start">
             <DoctorItem/>
             <DoctorItem/>
             <DoctorItem/>

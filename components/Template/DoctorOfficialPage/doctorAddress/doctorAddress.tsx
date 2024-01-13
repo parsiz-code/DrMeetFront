@@ -2,7 +2,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 
 const DoctorAddress = () => {
   return (
-    <div className="my-4">
+    <div className="my-4 px-2 lg:px-5">
       <div className="p-5 bg-[#ffa8a8] rounded-xl flex justify-around items-center gap-4">
         <div className="bg-[#e4e4e4] rounded-full p-2">
           <PlaceIcon className="text-[2rem]" />
