@@ -17,6 +17,7 @@ import SuggestionBox from "./suggestionBox/suggestionBox";
 import QuestionDoctor from "./Question/Question";
 import Portfolio from "./portFolio/portfolio";
 import DoctorNavbar from "./doctorNavbar/doctorNavbar";
+import DoctorSlideShow from "./slideShow/slideShow";
 
 interface IProps {
   doctorName: string;
@@ -34,6 +35,7 @@ const DoctorOfficialPage: FC<IProps> = ({ doctorName }) => {
       /> */}
       <DoctorDetailBar doctorName={doctorName} />
       <DoctorNavbar />
+      <DoctorSlideShow/>
       <div>
         <Grid container>
           <Grid item xs={12} sm={12} md={7} lg={7}>

@@ -6,7 +6,7 @@ import React from "react";
 function DoctorsPage() {
   return (
     <>
-      <NavBar routeName="doctors"/>
+      {/* <NavBar routeName="doctors"/> */}
       <Doctors/>
     </>
   );

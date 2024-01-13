@@ -76,7 +76,7 @@ function Comments() {
               <SwiperSlide className="mt-10 !w-full">
                 <div className="bg-[#f17732] px-10 pt-10 rounded-r-[3rem] rounded-bl-[3rem] w-full">
                   <div className="bg-white p-2 rounded-[1rem] shadow-xl shadow-[#f17732] -translate-x-8 -translate-y-20 w-16">
-                    <FormatQuoteOutlinedIcon className="text-[3rem] text-[#f17732]" />
+                    <FormatQuoteOutlinedIcon className="!text-[3rem] text-[#f17732]" />
                   </div>
                   <p className="text-white text-[0.9rem] -translate-y-14">
                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
@@ -89,7 +89,7 @@ function Comments() {
                       <h2 className="text-[0.7rem]">بیمار</h2>
                     </div>
                     <div className="">
-                      <FormatQuoteOutlinedIcon className="text-[8rem] p-0 m-0 text-[#fff6] rotate-180 translate-x-0 -translate-y-8" />
+                      <FormatQuoteOutlinedIcon className="!text-[8rem] p-0 m-0 text-[#fff6] rotate-180 translate-x-0 -translate-y-8" />
                     </div>
                   </div>
                 </div>

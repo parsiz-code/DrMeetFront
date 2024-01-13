@@ -1,11 +1,11 @@
 import { Box, Grid } from "@mui/material";
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input, Link } from "@nextui-org/react";
 import Image from "next/image";
 
 const Header = () => {
   return (
     <div>
-      <Grid container className="w-full px-2 lg:px-24 mb-5">
+      <Grid container className="w-full px-2 lg:px-24 !mb-5">
         <Grid item xs={12} sm={12} md={5} lg={5} className="mb-10 lg:mb-0">
           <Box className="flex justify-center items-center h-full flex-col">
             <Image
@@ -14,12 +14,12 @@ const Header = () => {
               width={200}
               height={200}
             />
-            <Button className="bg-[#00DAF5] text-white w-48 mb-2 text-[0.9rem]">
+            <Link href="/doctors" className="bg-[#00DAF5] text-white w-48 mb-2 text-[0.9rem] flex justify-center items-center py-2 rounded-xl">
               جستجوی سریع پزشکان
-            </Button>
-            <Button className="bg-transparent text-[#00DAF5] border border-[#00DAF5] w-48 text-[0.9rem]">
+            </Link>
+            <Link href="" className="bg-transparent text-[#00DAF5] border border-[#00DAF5] w-48 text-[0.9rem] flex justify-center items-center py-2 rounded-xl">
               نظردهی به پزشک
-            </Button>
+            </Link>
           </Box>
         </Grid>
         <Grid item xs={12} sm={12} md={7} lg={7} className="mt-4 lg:mt-0">

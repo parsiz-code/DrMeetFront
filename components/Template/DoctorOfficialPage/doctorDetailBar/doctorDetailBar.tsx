@@ -9,7 +9,7 @@ interface IProps {
 const DoctorDetailBar: FC<IProps> = ({doctorName}) => {
   return (
     <div>
-        <Grid container className='px-10 py-6'>
+        <Grid container className='px-10 py-4'>
             <Grid item xs={12} sm={9} md={9} lg={9}>
                 <h1 className='mb-2 text-[1.2rem] font-bold'>{doctorName}</h1>
                 <h2 className='text-[1rem] !text-gray-700 !bg-transparent'>فوق تخصص مغز و اعصاب </h2>

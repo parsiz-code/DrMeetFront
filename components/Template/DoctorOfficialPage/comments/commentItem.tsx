@@ -24,7 +24,7 @@ const CommentItem: FC<IProps> = ({
   avatarPhoto,
 }) => {
   return (
-    <Grid item xs={12} className="bg-[#f3f3f3] rounded-xl py-7 px-6 my-4">
+    <Grid item xs={12} className="bg-[#f3f3f3] rounded-xl py-7 px-6 !my-4">
       <User
         name="فلان فلانی"
         description={toPersianDigits("1402/10/21")}
