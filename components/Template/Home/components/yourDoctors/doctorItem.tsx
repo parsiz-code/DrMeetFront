@@ -3,14 +3,14 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import style from "./yourDoctor.module.css";
 import { Button, Link, User } from "@nextui-org/react";
 
-interface IProps{
-    link?: string
-    name?: string
-    description?: string
-    avatar?: string
+interface IProps {
+  link?: string;
+  name?: string;
+  description?: string;
+  avatar?: string;
 }
 
-const DoctorItem: FC<IProps> = ({link , name , description , avatar}) => {
+const DoctorItem: FC<IProps> = ({ link, name, description, avatar }) => {
   return (
     <Link
       href="#"

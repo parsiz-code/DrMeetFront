@@ -1,42 +1,52 @@
 import { Grid } from "@mui/material";
 import { Avatar, Divider, Link } from "@nextui-org/react";
-import React from "react";
+import React, { FC } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-function DoctorItem() {
+interface IProps {
+  doctorId: number;
+  photo: string;
+  name: string;
+  description: string;
+  location: string;
+}
+const DoctorItem: FC<IProps> = ({
+  photo,
+  name,
+  location,
+  description,
+  doctorId,
+}) => {
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} className="p-3">
       <div className="rounded-xl p-2 bg-[#f3f4f6]">
-        <Link href="doctors/1">
-          <Grid container className="py-2 flex !items-center">
-            <Grid item xs={3} className="">
-              <div className="flex !flex-col !items-center !justify-center">
-                <Avatar
-                  src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-                  size="lg"
-                />
-                <div className="">
-                  <StarIcon className="text-amber-500 text-[1rem]" />
-                  <StarIcon className="text-amber-500 text-[1rem]" />
-                  <StarIcon className="text-amber-500 text-[1rem]" />
-                </div>
+        <Link
+          href={`doctors/${doctorId}`}
+          className="py-2 px-4 flex !items-center"
+        >
+          <div className="w-1/3">
+            <div className="flex !flex-col !items-center !justify-center">
+              <Avatar src={photo === null ? 'https://cdn-icons-png.flaticon.com/512/149/149071.png' : `data:image/png;base64,${photo}`} size="lg" />
+              <div className="">
+                <StarIcon className="text-amber-500 text-[1rem]" />
+                <StarIcon className="text-amber-500 text-[1rem]" />
+                <StarIcon className="text-amber-500 text-[1rem]" />
               </div>
-            </Grid>
-            <Grid item xs={9} className="">
-              <div className="flex !flex-col !items-center !justify-center !gap-2">
-                <h3 className="text-[0.9rem] text-black">دکتر لورم ایپسوم</h3>
-                <h3 className="text-[0.75rem] text-center px-2 text-gray-500">
-                  اقدامات مداخله‌ای قلب و عروق (اینترونشنال کاردیولوژی)
-                  بزرگسالان
-                </h3>
-                <h3 className="text-[0.75rem] text-black">
-                  <LocationOnIcon className="text-[0.8rem]" />
-                  ساری
-                </h3>
-              </div>
-            </Grid>
-          </Grid>
+            </div>
+          </div>
+          <div className="w-2/3">
+            <div className="flex !flex-col !items-center !justify-center !gap-2">
+              <h3 className="text-[0.9rem] text-black">{name}</h3>
+              <h3 className="text-[0.75rem] text-center px-2 text-gray-500">
+                {description}
+              </h3>
+              <h3 className="text-[0.75rem] text-black">
+                <LocationOnIcon className="text-[0.8rem]" />
+                {location}
+              </h3>
+            </div>
+          </div>
         </Link>
         <Divider />
         <div className="flex justify-center items-center gap-2 py-3">
@@ -57,6 +67,6 @@ function DoctorItem() {
       </div>
     </Grid>
   );
-}
+};
 
 export default DoctorItem;
