@@ -20,7 +20,7 @@ const DoctorItem: FC<IProps> = ({
 }) => {
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} className="p-3">
-      <div className="rounded-xl p-2 bg-[#f3f4f6]">
+      <div className="rounded-xl p-2 bg-[#f3f4f6] shadow-lg hover:!-translate-y-2 transition-all">
         <Link
           href={`doctors/${doctorId}`}
           className="py-2 px-4 flex !items-center"
@@ -37,7 +37,7 @@ const DoctorItem: FC<IProps> = ({
           </div>
           <div className="w-2/3">
             <div className="flex !flex-col !items-center !justify-center !gap-2">
-              <h3 className="text-[0.9rem] text-black">{name}</h3>
+              <h3 className="text-[0.9rem] text-black">دکتر {name}</h3>
               <h3 className="text-[0.75rem] text-center px-2 text-gray-500">
                 {description}
               </h3>
