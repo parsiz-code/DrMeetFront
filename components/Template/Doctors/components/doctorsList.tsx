@@ -39,6 +39,12 @@ const DoctorList = () => {
 
   const [timerID, setTimerID] = useState<NodeJS.Timeout | null>(null);
 
+  const searchHandlerWithEnter = (e: any) => {
+    if (e.keyCode === 13) {
+      getDoctors(undefined , searchInputValue);
+    }
+  };
+
   return (
     <div>
       <div className="px-3 lg:px-64 !my-4">
@@ -57,12 +63,8 @@ const DoctorList = () => {
             value={searchInputValue}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               setSearchInputValue(event.target.value);
-              timerID && clearTimeout(timerID);
-              const tId = setTimeout(() => {
-                getDoctors();
-              }, 1000);
-              setTimerID(tId);
             }}
+            onKeyDown={searchHandlerWithEnter}
             endContent={
               <>
                 {searchInputValue && (
@@ -88,7 +90,7 @@ const DoctorList = () => {
               size="sm"
               isIconOnly
               radius="full"
-              onClick={() => getDoctors()}
+              onClick={() => getDoctors(undefined , searchInputValue)}
             >
               {loading ? <Spinner /> : <SearchIcon />}
             </Button>
@@ -197,10 +199,22 @@ const DoctorList = () => {
             </div>
           </div>
         </>
-      ): (
-        <div className="w-full flex justify-center items-center mt-20">
-          <Alert severity="warning">متاسفیم! پزشکی بر اساس جستجوی شما یافت نشد.</Alert>
-        </div>
+      ) : (
+        <>
+          {loading ? (
+            <div className="w-full flex justify-center items-center mt-20">
+              <Alert severity="info">
+              در حال دریافت اطلاعات از سرور |  لطفا منتظر بمانید.
+              </Alert>
+            </div>
+          ) : (
+            <div className="w-full flex justify-center items-center mt-20">
+              <Alert severity="warning">
+                متاسفیم! پزشکی بر اساس جستجوی شما یافت نشد.
+              </Alert>
+            </div>
+          )}
+        </>
       )}
 
       <Modal

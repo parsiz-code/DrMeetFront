@@ -4,12 +4,18 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import OptionsLine from "../options/options";
 import style from "./yourDoctor.module.css";
 import DoctorItem from "./doctorItem";
+import { IGetHomeFeatures } from "@/services/home/interface/getHomeFeatures";
+import { FC } from "react";
 
-const YourDoctors = () => {
+interface IProps{
+  features: IGetHomeFeatures[]
+}
+
+const YourDoctors: FC<IProps> = ({features}) => {
   return (
     <div className="relative w-full bg-slate-200">
       <div className="lg:absolute -top-10 w-full">
-        <OptionsLine />
+        <OptionsLine options={features} />
       </div>
       <Grid container className="w-full px-2 lg:px-16 py-16 lg:py-32">
         <Grid

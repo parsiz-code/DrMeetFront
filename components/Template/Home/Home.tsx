@@ -8,20 +8,39 @@ import JoinUs from "./components/joinUs/joinUs";
 import Question from "./components/Question/Question";
 import Comments from "./components/comments/comments";
 import Articles from "./components/articles/articles";
+import { IGetHomeBlogs } from "@/services/home/interface/getHomeBlogs";
+import { IGetHomeFeatures } from "@/services/home/interface/getHomeFeatures";
+import { IGetHomeOurServices } from "@/services/home/interface/getHomeOurServices";
+import { FC, useEffect } from "react";
 
-const HomeElement = () => {
+interface IProps {
+  blogsData: IGetHomeBlogs[];
+  featureData: IGetHomeFeatures[];
+  ourServicesData: IGetHomeOurServices;
+}
+
+const HomeElement: FC<IProps> = ({
+  blogsData,
+  featureData,
+  ourServicesData,
+}) => {
+  useEffect(() => {
+    console.log(blogsData);
+    console.log(featureData);
+    console.log(ourServicesData);
+  }, []);
   return (
     <>
       {/* <NavBar routeName='' /> */}
       <Header />
-      <Service />
+      <Service service={ourServicesData} />
       <Categories />
-      <YourDoctors />
+      <YourDoctors features={featureData} />
       <Reservation />
       <JoinUs />
-      <Question/>
-      <Comments/>
-      <Articles/>
+      <Question />
+      <Comments />
+      <Articles articles={blogsData} />
     </>
   );
 };
