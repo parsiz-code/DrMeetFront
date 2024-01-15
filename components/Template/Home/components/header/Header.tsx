@@ -1,8 +1,27 @@
 import { Box, Grid } from "@mui/material";
 import { Button, Input, Link } from "@nextui-org/react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 const Header = () => {
+  const [searchValue, setSearchValue] = useState<string>("");
+  const route = useRouter();
+
+  const searchHandler = () => {
+    if (searchValue.trim()) {
+      route.push(`/doctors?q=${searchValue}`);
+    }
+  };
+
+  const searchHandlerWithEnter = (e: any) => {
+    if (e.keyCode === 13) {
+      if (searchValue.trim()) {
+        route.push(`/doctors?q=${searchValue}`);
+      }
+    }
+  };
+
   return (
     <div>
       <Grid container className="w-full px-2 lg:px-24 !mb-5">
@@ -14,10 +33,16 @@ const Header = () => {
               width={200}
               height={200}
             />
-            <Link href="/doctors" className="bg-[#00DAF5] text-white w-48 mb-2 text-[0.9rem] flex justify-center items-center py-2 rounded-xl">
+            <Link
+              href="/doctors"
+              className="bg-[#00DAF5] text-white w-48 mb-2 text-[0.9rem] flex justify-center items-center py-2 rounded-xl"
+            >
               جستجوی سریع پزشکان
             </Link>
-            <Link href="" className="bg-transparent text-[#00DAF5] border border-[#00DAF5] w-48 text-[0.9rem] flex justify-center items-center py-2 rounded-xl">
+            <Link
+              href=""
+              className="bg-transparent text-[#00DAF5] border border-[#00DAF5] w-48 text-[0.9rem] flex justify-center items-center py-2 rounded-xl"
+            >
               نظردهی به پزشک
             </Link>
           </Box>
@@ -35,11 +60,22 @@ const Header = () => {
               </span>
             </p>
             <Box className="p-2 mb-2">
-              <Input size="sm" fullWidth className="py-1" radius="full" />
+              <Input
+                size="sm"
+                fullWidth
+                className="py-1"
+                radius="full"
+                value={searchValue}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  setSearchValue(event.target.value);
+                }}
+                onKeyDown={searchHandlerWithEnter}
+              />
             </Box>
             <Button
               className="bg-[#005EBD] text-white text-[1rem] px-8 font-bold"
               radius="full"
+              onClick={searchHandler}
             >
               جستجو
             </Button>

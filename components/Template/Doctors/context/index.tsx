@@ -15,6 +15,7 @@ import React, {
   useState,
 } from "react";
 import _ from "lodash";
+import { useRouter } from "next/router";
 
 interface ICtxValue {
   loading: boolean;
@@ -23,15 +24,15 @@ interface ICtxValue {
   allDoctorsData: IGetAllDoctorsResponse | undefined;
   allDoctorsDataList: IDoctorData[];
   allCitiesList: IGetCitiesResponse[];
-  searchInputValue: string;
-  setSearchInputValue: Dispatch<SetStateAction<string>>;
+  searchInputValue: string | undefined;
+  setSearchInputValue: Dispatch<SetStateAction<string | undefined>>;
   searchCityInputValue: string;
   setSearchCityInputValue: Dispatch<SetStateAction<string>>;
   selectedCity: IGetCitiesResponse | undefined;
   setSelectedCity: Dispatch<SetStateAction<IGetCitiesResponse | undefined>>;
 
-  getCities: (name?: string) => Promise<void>
-  getDoctors: (city?: IGetCitiesResponse) => Promise<void>;
+  getCities: (name?: string) => Promise<void>;
+  getDoctors: (city?: IGetCitiesResponse, query?: string) => Promise<void>;
 }
 const DoctorCtx = createContext<ICtxValue | undefined>(undefined);
 const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -47,7 +48,7 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
   );
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(12);
-  const [searchInputValue, setSearchInputValue] = useState<string>("");
+  const [searchInputValue, setSearchInputValue] = useState<string>();
   const [searchCityInputValue, setSearchCityInputValue] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<
     IGetCitiesResponse | undefined
@@ -55,21 +56,25 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const { getAllDoctorAsync, getAllCitiesAsync } = DoctorServices();
 
-  useEffect(() => {
-    getDoctors();
-  }, []);
+  const router = useRouter();
+
+
 
   useEffect(() => {
-    getDoctors();
+    if(router.query.q){
+      setSearchInputValue(router.query.q as string);
+      getDoctors(undefined, router.query.q as string);
+    }else{
+      getDoctors()
+    }
 
-  }, [currentPage]);
+  }, [router , currentPage]);
 
-  const getDoctors = async (city?: IGetCitiesResponse) => {
+  const getDoctors = async (city?: IGetCitiesResponse, query?: string) => {
     setLoading(true);
     try {
-      console.log(selectedCity);
       const { data } = await getAllDoctorAsync({
-        SearchParameter: searchInputValue,
+        SearchParameter: query,
         CityName: city?.name,
         PageNumber: currentPage,
         PageSize: pageSize,
@@ -114,7 +119,7 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
     getCities,
     getDoctors,
     searchCityInputValue,
-    setSearchCityInputValue
+    setSearchCityInputValue,
   };
 
   return <DoctorCtx.Provider value={ctxValue}>{children}</DoctorCtx.Provider>;

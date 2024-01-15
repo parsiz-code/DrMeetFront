@@ -2,22 +2,28 @@ import { Box, Grid } from "@mui/material";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PeopleIcon from "@mui/icons-material/People";
+import StyleIcon from '@mui/icons-material/Style';
+import { IGetHomeFeatures } from "@/services/home/interface/getHomeFeatures";
+import { FC } from "react";
 
-const OptionsLine = () => {
-  const optionsList = [
-    {
-      icon: <SentimentSatisfiedAltIcon className="text-white text-[1.5rem]" />,
-      title: "تضمین بازگشت وجه و رضایت کاربران",
-    },
-    {
-      icon: <AccessTimeIcon className="text-white text-[1.5rem]" />,
-      title: "صرفه جویی در زمان و هزینه",
-    },
-    {
-      icon: <PeopleIcon className="text-white text-[1.5rem]" />,
-      title: "مشاوره با پزشکان متعهد",
-    },
-  ];
+interface IProps {
+  options: IGetHomeFeatures[]
+}
+const OptionsLine: FC<IProps> = ({ options }) => {
+  // const optionsList = [
+  //   {
+  //     icon: <SentimentSatisfiedAltIcon className="text-white text-[1.5rem]" />,
+  //     title: "تضمین بازگشت وجه و رضایت کاربران",
+  //   },
+  //   {
+  //     icon: <AccessTimeIcon className="text-white text-[1.5rem]" />,
+  //     title: "صرفه جویی در زمان و هزینه",
+  //   },
+  //   {
+  //     icon: <PeopleIcon className="text-white text-[1.5rem]" />,
+  //     title: "مشاوره با پزشکان متعهد",
+  //   },
+  // ];
   return (
     <div className="">
       <Grid container className="w-full px-2 lg:px-16">
@@ -32,11 +38,19 @@ const OptionsLine = () => {
           alignItems={"center"}
           rowSpacing={2}
         >
-          {optionsList.map((item, index) => (
-            <Grid item xs={12} sm={12} md={4} lg={4} key={index} className="px-4">
+          {options.slice(0,3).map((item, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={4}
+              lg={4}
+              key={index}
+              className="px-4"
+            >
               <Box className="flex justify-start items-center rounded-[2rem] p-4 bg-[#005EBD]">
                 <span className="ml-10 bg-[#00DAF5] p-3 rounded-full">
-                  {item.icon}
+                  <StyleIcon className="text-white text-[1.5rem]" />
                 </span>
                 <span className="text-white">{item.title}</span>
               </Box>
