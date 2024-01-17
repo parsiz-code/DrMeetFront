@@ -6,11 +6,7 @@ import QuestionMarkOutlinedIcon from "@mui/icons-material/QuestionMarkOutlined";
 function Question() {
   return (
     <div>
-      <Grid
-        container
-        className="w-full px-16 pt-24 pb-80 bg-[#efefef]"
-        columnSpacing={3}
-      >
+      <Grid container className="w-full px-16 pt-24 pb-80 bg-[#efefef]">
         <Grid item xs={12} sm={12} md={5.5} lg={5.5} className="">
           <h2 className="text-[#007dfe] text-[1rem]">سوالات متداول</h2>
           <h2 className="text-[#007dfe] text-[1.5rem] py-2">

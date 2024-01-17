@@ -81,7 +81,7 @@ const Categories = () => {
         <Grid item xs={12} className="!mb-10">
           <h1 className="text-center text-[1.5rem] font-bold">دسته بندی ها</h1>
         </Grid>
-        <Grid item container spacing={2}>
+        <Grid item container>
           {categoriesList.map((item, index) => (
             <Grid
               item
@@ -89,7 +89,7 @@ const Categories = () => {
               sm={6}
               md={3}
               key={index}
-              className="p-0 hover:!-translate-y-2 transition-all"
+              className="p-3 hover:!-translate-y-2 transition-all"
             >
               <Link
                 href={item.link}
