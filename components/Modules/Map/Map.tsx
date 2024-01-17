@@ -2,7 +2,6 @@ import React, { FC, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import customIconUrl from './images/location.png';
 
 
 interface IProps {
