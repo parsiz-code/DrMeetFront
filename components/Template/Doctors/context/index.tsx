@@ -58,17 +58,24 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const router = useRouter();
 
-
+  useEffect(() => {
+    router.push(
+      {
+        query: { q: searchInputValue },
+      },
+      undefined,
+      { shallow: true }
+    );
+  }, [searchInputValue]);
 
   useEffect(() => {
-    if(router.query.q){
+    if (router.query.q) {
       setSearchInputValue(router.query.q as string);
       getDoctors(undefined, router.query.q as string);
-    }else{
-      getDoctors()
+    } else {
+      getDoctors();
     }
-
-  }, [router , currentPage]);
+  }, [router, currentPage]);
 
   const getDoctors = async (city?: IGetCitiesResponse, query?: string) => {
     setLoading(true);

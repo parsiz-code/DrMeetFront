@@ -37,7 +37,7 @@ const Header = () => {
               href="/doctors"
               className="bg-[#00DAF5] text-white w-48 mb-2 text-[0.9rem] flex justify-center items-center py-2 rounded-xl"
             >
-              جستجوی سریع پزشکان
+              نمایش کل پزشکان
             </Link>
             <Link
               href=""
