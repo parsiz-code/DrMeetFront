@@ -10,7 +10,7 @@ const MapWithNoSSR = dynamic(() => import('@/components/Modules/Map/Map'), {
 const DoctorMapAddress: React.FC = () => {
   return (
     <div className="px-2 lg:px-5">
-      <div className="rounded-xl bg-[#f3f3f3] flex justify-center items-center p-2 h-80 overflow-hidden">
+      <div className="rounded-xl bg-[#f3f3f3] flex justify-center items-center h-80 overflow-hidden">
         <MapWithNoSSR/>
       </div>
     </div>
