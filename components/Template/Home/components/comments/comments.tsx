@@ -89,7 +89,7 @@ function Comments() {
                       <h2 className="text-[0.7rem]">بیمار</h2>
                     </div>
                     <div className="">
-                      <FormatQuoteOutlinedIcon className="!text-[8rem] p-0 m-0 text-[#fff6] rotate-180 translate-x-0 -translate-y-8" />
+                      <FormatQuoteOutlinedIcon className="!text-[6rem] lg:!text-[8rem] p-0 m-0 text-[#fff6] rotate-180 translate-x-0 -translate-y-8" />
                     </div>
                   </div>
                 </div>

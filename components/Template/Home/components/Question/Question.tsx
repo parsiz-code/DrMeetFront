@@ -8,8 +8,7 @@ function Question() {
     <div>
       <Grid
         container
-        className="w-full px-16 pt-24 pb-80 bg-[#efefef]"
-        columnSpacing={3}
+        className="w-full px-16 py-24 bg-[#efefef]"
       >
         <Grid item xs={12} sm={12} md={5.5} lg={5.5} className="">
           <h2 className="text-[#007dfe] text-[1rem]">سوالات متداول</h2>
