@@ -6,7 +6,7 @@ import React from 'react'
 function DoctorPage() {
   return (
     <>
-        <DoctorOfficialPage doctorName='دکتر لورم ایپسوم'/>   
+        <DoctorOfficialPage doctorName='دکتر محسن فخری زاده مهابادی'/>   
         {/* <Footer/> */}
     </>
   )

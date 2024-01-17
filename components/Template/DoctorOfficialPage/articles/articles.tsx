@@ -57,27 +57,42 @@ function DoctorArticles() {
                   <Box className="flex justify-center items-center">
                     <Image
                       src="/images/noPhoto.png"
-                      className="!w-full !h-48"
+                      className="!w-full !h-32"
                     />
                   </Box>
-                  <h5 className="text-[1rem] mt-2">
-                    {/* {item.title} */}
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="text-[1rem] mt-2"
+                  >
                     لورم اپسوم چیست
-                  </h5>
+                  </Typography>
                   <Box className="mb-4 flex justify-between items-center">
-                    <h6 className="text-[0.7rem] text-gray-500">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
                       <span>نویسنده: </span>
                       <span>مدیر سایت</span>
-                    </h6>
-                    <h6 className="text-[0.7rem] text-gray-500">
-                      {/* <span>{ToShamsiDate(item.createDate, "date")}</span> */}
-                      <span>{toPersianDigits("1402/10/23")}</span>
-                    </h6>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>{toPersianDigits("1402/10/19")}</span>
+                    </Typography>
                   </Box>
-                  <h6 className="text-gray-600 text-[0.9rem]">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    lineHeight={1.7}
+                  >
                     اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار دارید
                     به متن هاي برخورده اید که با نام لورم ایپسوم شناخته .میشوند
-                  </h6>
+                  </Typography>
                 </CardContent>
                 <CardActions className="flex justify-end px-4">
                   <Link
@@ -95,27 +110,42 @@ function DoctorArticles() {
                   <Box className="flex justify-center items-center">
                     <Image
                       src="/images/noPhoto.png"
-                      className="!w-full !h-48"
+                      className="!w-full !h-32"
                     />
                   </Box>
-                  <h5 className="text-[1rem] mt-2">
-                    {/* {item.title} */}
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="text-[1rem] mt-2"
+                  >
                     لورم اپسوم چیست
-                  </h5>
+                  </Typography>
                   <Box className="mb-4 flex justify-between items-center">
-                    <h6 className="text-[0.7rem] text-gray-500">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
                       <span>نویسنده: </span>
                       <span>مدیر سایت</span>
-                    </h6>
-                    <h6 className="text-[0.7rem] text-gray-500">
-                      {/* <span>{ToShamsiDate(item.createDate, "date")}</span> */}
-                      <span>{toPersianDigits("1402/10/23")}</span>
-                    </h6>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>{toPersianDigits("1402/10/19")}</span>
+                    </Typography>
                   </Box>
-                  <h6 className="text-gray-600 text-[0.9rem]">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    lineHeight={1.7}
+                  >
                     اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار دارید
                     به متن هاي برخورده اید که با نام لورم ایپسوم شناخته .میشوند
-                  </h6>
+                  </Typography>
                 </CardContent>
                 <CardActions className="flex justify-end px-4">
                   <Link
@@ -133,27 +163,42 @@ function DoctorArticles() {
                   <Box className="flex justify-center items-center">
                     <Image
                       src="/images/noPhoto.png"
-                      className="!w-full !h-48"
+                      className="!w-full !h-32"
                     />
                   </Box>
-                  <h5 className="text-[1rem] mt-2">
-                    {/* {item.title} */}
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="text-[1rem] mt-2"
+                  >
                     لورم اپسوم چیست
-                  </h5>
+                  </Typography>
                   <Box className="mb-4 flex justify-between items-center">
-                    <h6 className="text-[0.7rem] text-gray-500">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
                       <span>نویسنده: </span>
                       <span>مدیر سایت</span>
-                    </h6>
-                    <h6 className="text-[0.7rem] text-gray-500">
-                      {/* <span>{ToShamsiDate(item.createDate, "date")}</span> */}
-                      <span>{toPersianDigits("1402/10/23")}</span>
-                    </h6>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>{toPersianDigits("1402/10/19")}</span>
+                    </Typography>
                   </Box>
-                  <h6 className="text-gray-600 text-[0.9rem]">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    lineHeight={1.7}
+                  >
                     اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار دارید
                     به متن هاي برخورده اید که با نام لورم ایپسوم شناخته .میشوند
-                  </h6>
+                  </Typography>
                 </CardContent>
                 <CardActions className="flex justify-end px-4">
                   <Link
@@ -171,27 +216,42 @@ function DoctorArticles() {
                   <Box className="flex justify-center items-center">
                     <Image
                       src="/images/noPhoto.png"
-                      className="!w-full !h-48"
+                      className="!w-full !h-32"
                     />
                   </Box>
-                  <h5 className="text-[1rem] mt-2">
-                    {/* {item.title} */}
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="text-[1rem] mt-2"
+                  >
                     لورم اپسوم چیست
-                  </h5>
+                  </Typography>
                   <Box className="mb-4 flex justify-between items-center">
-                    <h6 className="text-[0.7rem] text-gray-500">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
                       <span>نویسنده: </span>
                       <span>مدیر سایت</span>
-                    </h6>
-                    <h6 className="text-[0.7rem] text-gray-500">
-                      {/* <span>{ToShamsiDate(item.createDate, "date")}</span> */}
-                      <span>{toPersianDigits("1402/10/23")}</span>
-                    </h6>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>{toPersianDigits("1402/10/19")}</span>
+                    </Typography>
                   </Box>
-                  <h6 className="text-gray-600 text-[0.9rem]">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    lineHeight={1.7}
+                  >
                     اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار دارید
                     به متن هاي برخورده اید که با نام لورم ایپسوم شناخته .میشوند
-                  </h6>
+                  </Typography>
                 </CardContent>
                 <CardActions className="flex justify-end px-4">
                   <Link

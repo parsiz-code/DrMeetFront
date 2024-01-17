@@ -24,6 +24,11 @@ const HomeElement: FC<IProps> = ({
   featureData,
   ourServicesData,
 }) => {
+  useEffect(() => {
+    console.log(blogsData);
+    console.log(featureData);
+    console.log(ourServicesData);
+  }, []);
   return (
     <>
       {/* <NavBar routeName='' /> */}

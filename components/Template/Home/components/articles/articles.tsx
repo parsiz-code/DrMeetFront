@@ -66,24 +66,41 @@ const Articles: FC<IProps> = ({ articles }) => {
                         className="!w-full !h-48"
                       />
                     </Box>
-                    <h5 className="text-[1rem] mt-2">
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      className="text-[1rem] mt-2"
+                    >
                       {item.title}
                       {/* لورم اپسوم چیست */}
-                    </h5>
+                    </Typography>
                     <Box className="mb-4 flex justify-between items-center">
-                      <h6 className="text-[0.7rem] text-gray-500">
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        className="text-[0.7rem]"
+                      >
                         <span>نویسنده: </span>
                         <span>مدیر سایت</span>
-                      </h6>
-                      <h6 className="text-[0.7rem] text-gray-500">
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        className="text-[0.7rem]"
+                      >
                         <span>{ToShamsiDate(item.createDate, "date")}</span>
-                      </h6>
+                      </Typography>
                     </Box>
-                    <h6 className="text-gray-600 text-[0.9rem]">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      lineHeight={1.7}
+                    >
                       اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار
                       دارید به متن هاي برخورده اید که با نام لورم ایپسوم شناخته
                       .میشوند
-                    </h6>
+                    </Typography>
                   </CardContent>
                   <CardActions className="flex justify-end px-4">
                     <Link
@@ -96,7 +113,7 @@ const Articles: FC<IProps> = ({ articles }) => {
                 </Card>
               </SwiperSlide>
             ))}
-            {/* <SwiperSlide className="p-4">
+            <SwiperSlide className="p-4">
               <Card className="shadow rounded-2xl">
                 <CardContent className="">
                   <Image src="/images/noPhoto.png" className="!w-full !h-48" />
@@ -109,30 +126,30 @@ const Articles: FC<IProps> = ({ articles }) => {
                     لورم اپسوم چیست
                   </Typography>
                   <Box className="mb-4 flex justify-between items-center">
-                    <h6
+                    <Typography
                       variant="body2"
                       color="text.secondary"
                       className="text-[0.7rem]"
                     >
                       <span>نویسنده: </span>
                       <span>مدیر سایت</span>
-                    </h6>
-                    <h6
+                    </Typography>
+                    <Typography
                       variant="body2"
                       color="text.secondary"
                       className="text-[0.7rem]"
                     >
                       <span>{toPersianDigits("1402/10/19")}</span>
-                    </h6>
+                    </Typography>
                   </Box>
-                  <h6
+                  <Typography
                     variant="body2"
                     color="text.secondary"
                     lineHeight={1.7}
                   >
                     اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار دارید
                     به متن هاي برخورده اید که با نام لورم ایپسوم شناخته .میشوند
-                  </h6>
+                  </Typography>
                 </CardContent>
                 <CardActions className="flex justify-end px-4">
                   <Link
@@ -143,7 +160,103 @@ const Articles: FC<IProps> = ({ articles }) => {
                   </Link>
                 </CardActions>
               </Card>
-            </SwiperSlide> */}
+            </SwiperSlide>
+            <SwiperSlide className="p-4">
+              <Card className="shadow rounded-2xl">
+                <CardContent className="">
+                  <Image src="/images/noPhoto.png" className="!w-full !h-48" />
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="text-[1rem] mt-2"
+                  >
+                    لورم اپسوم چیست
+                  </Typography>
+                  <Box className="mb-4 flex justify-between items-center">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>نویسنده: </span>
+                      <span>مدیر سایت</span>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>{toPersianDigits("1402/10/19")}</span>
+                    </Typography>
+                  </Box>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    lineHeight={1.7}
+                  >
+                    اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار دارید
+                    به متن هاي برخورده اید که با نام لورم ایپسوم شناخته .میشوند
+                  </Typography>
+                </CardContent>
+                <CardActions className="flex justify-end px-4">
+                  <Link
+                    href="#"
+                    className="text-black text-[1rem] hover:text-[#007dfe] hover:underline"
+                  >
+                    مشاهده
+                  </Link>
+                </CardActions>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide className="p-4">
+              <Card className="shadow rounded-2xl">
+                <CardContent className="">
+                  <Image src="/images/noPhoto.png" className="!w-full !h-48" />
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="text-[1rem] mt-2"
+                  >
+                    لورم اپسوم چیست
+                  </Typography>
+                  <Box className="mb-4 flex justify-between items-center">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>نویسنده: </span>
+                      <span>مدیر سایت</span>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      className="text-[0.7rem]"
+                    >
+                      <span>{toPersianDigits("1402/10/19")}</span>
+                    </Typography>
+                  </Box>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    lineHeight={1.7}
+                  >
+                    اگر شما یک طراح هستین و یا با طراحی هاي گرافیکی سروکار دارید
+                    به متن هاي برخورده اید که با نام لورم ایپسوم شناخته .میشوند
+                  </Typography>
+                </CardContent>
+                <CardActions className="flex justify-end px-4">
+                  <Link
+                    href="#"
+                    className="text-black text-[1rem] hover:text-[#007dfe] hover:underline"
+                  >
+                    مشاهده
+                  </Link>
+                </CardActions>
+              </Card>
+            </SwiperSlide>
           </Swiper>
         </Grid>
       </Grid>
