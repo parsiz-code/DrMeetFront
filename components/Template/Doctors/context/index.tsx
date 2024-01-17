@@ -53,34 +53,22 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [selectedCity, setSelectedCity] = useState<
     IGetCitiesResponse | undefined
   >();
-  const [timerID, setTimerID] = useState<NodeJS.Timeout | null>(null);
 
   const { getAllDoctorAsync, getAllCitiesAsync } = DoctorServices();
 
   const router = useRouter();
 
-  useEffect(() => {
-    router.push(
-      {
-        query: { q: searchInputValue },
-      },
-      undefined,
-      { shallow: true }
-    );
-  }, [searchInputValue]);
+
 
   useEffect(() => {
-    if (router.query.q) {
-      timerID && clearTimeout(timerID);
-      const tId = setTimeout(() => {
-        setSearchInputValue(router.query.q as string);
-        getDoctors(undefined, router.query.q as string);
-      }, 1000);
-      setTimerID(tId);
-    } else {
-      getDoctors();
+    if(router.query.q){
+      setSearchInputValue(router.query.q as string);
+      getDoctors(undefined, router.query.q as string);
+    }else{
+      getDoctors()
     }
-  }, [router, currentPage]);
+
+  }, [router , currentPage]);
 
   const getDoctors = async (city?: IGetCitiesResponse, query?: string) => {
     setLoading(true);

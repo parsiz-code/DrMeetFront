@@ -77,14 +77,11 @@ const Categories = () => {
       <div className="lg:absolute -top-[8rem]">
         <Banner />
       </div>
-      <Grid
-        container
-        className="w-full px-2 lg:px-16 pt-16 lg:pt-64 pb-36 bg-slate-100"
-      >
+      <Grid container className="w-full px-2 lg:px-16 pt-16 lg:pt-64 pb-36 bg-slate-100">
         <Grid item xs={12} className="!mb-10">
           <h1 className="text-center text-[1.5rem] font-bold">دسته بندی ها</h1>
         </Grid>
-        <Grid item container>
+        <Grid item container spacing={2}>
           {categoriesList.map((item, index) => (
             <Grid
               item
@@ -92,7 +89,7 @@ const Categories = () => {
               sm={6}
               md={3}
               key={index}
-              className="p-4 hover:!-translate-y-2 transition-all"
+              className="p-0 hover:!-translate-y-2 transition-all"
             >
               <Link
                 href={item.link}
