@@ -46,9 +46,9 @@ const RegisterPage = () => {
   }, [passwordInputValue]);
 
   const isRepeatValid = useMemo(() => {
-    return repeatPasswordInputValue === repeatPasswordInputValue ? true : false
-    
-  }, [repeatPasswordInputValue])
+    return repeatPasswordInputValue === passwordInputValue ? true : false;
+    // return passwordInputValue === repeatPasswordInputValue ? true : false;
+  }, [repeatPasswordInputValue]);
 
   //   event: React.ChangeEvent<HTMLInputElement>
 
@@ -118,24 +118,24 @@ const RegisterPage = () => {
                       input: "text-center text-black",
                     }}
                   />
-                  <Input
-                    type="text"
-                    label="شماره همراه"
-                    size="sm"
-                    fullWidth
-                    required
-                    value={phoneNumberInputValue}
-                    onValueChange={setphoneNumberInputValue}
-                    color={"success"}
-                    classNames={{
-                      input: "text-center text-black",
-                    }}
-                  />
                 </div>
               </div>
             </Grid>
             <Grid item xs={12} sm={6} md={6} lg={6} className="p-3">
               <div className="w-full flex !flex-col items-center gap-3">
+                <Input
+                  type="text"
+                  label="شماره همراه"
+                  size="sm"
+                  fullWidth
+                  required
+                  value={phoneNumberInputValue}
+                  onValueChange={setphoneNumberInputValue}
+                  color={"success"}
+                  classNames={{
+                    input: "text-center text-black",
+                  }}
+                />
                 <Select
                   size={"sm"}
                   color={"success"}
@@ -210,49 +210,17 @@ const RegisterPage = () => {
                     input: "text-center text-black",
                   }}
                 />
-                <Input
-                  type="password"
-                  label="تکرار رمز عبور"
-                  size="sm"
-                  required
-                  fullWidth
-                  value={repeatPasswordInputValue}
-                  onValueChange={setRepeatPasswordInputValue}
-                  isInvalid={isRepeatValid}
-                  color={isRepeatValid ? "danger" : "success"}
-                //   errorMessage={
-                //     isRepeatValid && toPersianDigits("یکسان نیست!")
-                //   }
-                  endContent={
-                    <button
-                      className="focus:outline-none"
-                      type="button"
-                      onClick={toggleVisibility}
-                    >
-                      {isVisible ? (
-                        <VisibilityIcon className="text-2xl text-default-400 pointer-events-none" />
-                      ) : (
-                        <VisibilityOffIcon className="text-2xl text-default-400 pointer-events-none" />
-                      )}
-                    </button>
-                  }
-                  type={isVisible ? "text" : "password"}
-                  classNames={{
-                    input: "text-center text-black",
-                  }}
-                />
-                <Button
-                  type="submit"
-                  className="bg-blue-500 text-white py-6 text-[1rem]"
-                  fullWidth
-                  isLoading={loading ? true : false}
-                >
-                  ایجاد حساب کاربری
-                </Button>
               </div>
             </Grid>
 
             <Grid item xs={12} sm={12} md={12} lg={12} className="p-3">
+              <Button
+                type="submit"
+                className="bg-blue-500 text-white py-6 text-[1rem] mb-4 px-10"
+                isLoading={loading ? true : false}
+              >
+                ایجاد حساب کاربری
+              </Button>
               <div className="flex justify-center items-center gap-4">
                 <h6 className="">حساب کاربری دارید؟</h6>
                 <Link href="/login" className="!text-indigo-700">
