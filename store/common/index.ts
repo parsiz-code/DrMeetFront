@@ -6,6 +6,7 @@ export interface IDoctorMenuModalsSate {
   organization: boolean;
   manageRoles: boolean;
   setCenterServicesPrice: boolean;
+  darkTheme: boolean;
 }
 
 const initialCommonState = {
@@ -13,6 +14,7 @@ const initialCommonState = {
   patientId: undefined as number | undefined,
   doctorMenuItemsState: { centerSetting: false } as IDoctorMenuModalsSate,
   showLogin: false,
+  darkTheme: false,
 };
 
 export const commonSlice = createSlice({
@@ -34,6 +36,9 @@ export const commonSlice = createSlice({
     showLoginHandler: (state, action: PayloadAction<boolean>) => {
       state.showLogin = action.payload;
     },
+    darkThemeHandler: (state, action: PayloadAction<boolean>) => {
+      state.darkTheme = action.payload;
+    },
   },
 });
 
@@ -42,6 +47,7 @@ export const {
   patientIdHandler,
   doctorMenuModalStateHandler,
   showLoginHandler,
+  darkThemeHandler,
 } = commonSlice.actions;
 
 export default commonSlice.reducer;

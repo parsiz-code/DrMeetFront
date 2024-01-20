@@ -43,6 +43,23 @@
   bottom: 0;
 }
 
+.darkBG{
+  background-color: #121212 !important;
+}
+.darkElem{
+  background-color: #232323;
+}
+
+.linkHover:hover > h6 ,
+.linkHover:hover > svg {
+  color: #121212 !important;
+}
+
+.neumorphism{
+  box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
 
 .rmdp-container {
   width: 100%;

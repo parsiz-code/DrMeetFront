@@ -127,7 +127,7 @@ const LoginPage = () => {
 
   return (
     <div className="h-[100vh] bg-gradient-to-bl from-[#3dffbf] to-blue-500 text-center">
-      <div className="pt-10 px-3 lg:w-[60rem] my-0 mx-auto">
+      <div className="pt-10 px-3 lg:w-[60rem] my-0 mx-auto ">
         <Grid container className="bg-white py-16 px-4 rounded-xl">
           <Grid item xs={12} sm={6} md={6} lg={6} className="p-3">
             <div className="flex !flex-col justify-center items-center gap-5 lg:px-7">
@@ -200,7 +200,7 @@ const LoginPage = () => {
                     className="!w-full rounded-xl hover:cursor-pointer py-2 relative"
                     onClick={() => setCaptcha(generateCaptcha())}
                   >
-                    <h6 className=" text-[1.2rem] tracking-[2rem] font-extrabold text-center">
+                    <h6 className=" text-[1.2rem] tracking-[1.5rem] font-extrabold text-center">
                       {captcha}
                     </h6>
                     <h6 className="colorBackgroundCaptcha"></h6>
