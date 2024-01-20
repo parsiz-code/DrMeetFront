@@ -49,7 +49,6 @@ const ForgetPasswordPage = () => {
                   value={phoneInputValue}
                   onValueChange={setPhoneInputValue}
                   //   isInvalid={isInvalidEmail}
-                  color={"success"}
                   //   color={isInvalidEmail ? "danger" : "success"}
                   //   errorMessage={isInvalidEmail && "Please enter a valid email"}
                 />

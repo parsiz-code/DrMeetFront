@@ -3,8 +3,7 @@ import { toast } from "react-toastify";
 
 export const useParsizAxios = () => {
   const parsizTebAxios = axios.create({
-    baseURL: "http://api.parsizteb.ir/api/",
-    // baseURL: process.env.parsizTebBaseApi,
+    baseURL: process.env.NEXT_PUBLIC_BASE_URL_PARSIZTEB,
   });
 
   parsizTebAxios.interceptors.response.use(

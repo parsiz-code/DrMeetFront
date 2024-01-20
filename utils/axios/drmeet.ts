@@ -3,8 +3,8 @@ import { toast } from "react-toastify";
 
 export const useDrmeetAxios = () => {
   const drmeetAxios = axios.create({
-    baseURL: 'http://devapi.drmeet.ir/api/',
-    // baseURL: process.env.drmeetBaseApi,
+    // baseURL: 'http://devapi.drmeet.ir/api/',
+    baseURL: process.env.NEXT_PUBLIC_BASE_URL_DRMEET,
   });
 
   drmeetAxios.interceptors.response.use(

@@ -74,7 +74,6 @@ const RegisterPage = () => {
                     required
                     value={firstNameInputValue}
                     onValueChange={setFirstNameInputValue}
-                    color={"success"}
                     classNames={{
                       input: "text-center text-black",
                     }}
@@ -87,7 +86,6 @@ const RegisterPage = () => {
                     required
                     value={lastNameInputValue}
                     onValueChange={setLastNameInputValue}
-                    color={"success"}
                     classNames={{
                       input: "text-center text-black",
                     }}
@@ -100,7 +98,6 @@ const RegisterPage = () => {
                     required
                     value={userNameInputValue}
                     onValueChange={setUserNameInputValue}
-                    color={"success"}
                     classNames={{
                       input: "text-center text-black",
                     }}
@@ -113,7 +110,6 @@ const RegisterPage = () => {
                     required
                     value={nationalCodeInputValue}
                     onValueChange={setNationCodeInputValue}
-                    color={"success"}
                     classNames={{
                       input: "text-center text-black",
                     }}
@@ -131,14 +127,12 @@ const RegisterPage = () => {
                   required
                   value={phoneNumberInputValue}
                   onValueChange={setphoneNumberInputValue}
-                  color={"success"}
                   classNames={{
                     input: "text-center text-black",
                   }}
                 />
                 <Select
                   size={"sm"}
-                  color={"success"}
                   label="جنسیت"
                   fullWidth
                   classNames={{
@@ -159,7 +153,6 @@ const RegisterPage = () => {
                 </Select>
                 <Select
                   size={"sm"}
-                  color={"success"}
                   label="بیمه"
                   fullWidth
                   value={insuranceSelected}
@@ -188,7 +181,7 @@ const RegisterPage = () => {
                   value={passwordInputValue}
                   onValueChange={setPasswordInputValue}
                   isInvalid={isInvalidPassword}
-                  color={isInvalidPassword ? "danger" : "success"}
+                  color={isInvalidPassword ? "danger" : ""}
                   errorMessage={
                     isInvalidPassword && toPersianDigits("حداقل 3 حرف میباشد!")
                   }
