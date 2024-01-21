@@ -72,16 +72,29 @@
   font-size:2rem !important;
 }
 
-/* .rmdp-input {
+.activeLighter{
+  animation: activeLight 2s infinite;
+}
+
+/* .menubarHover:hover{
+  transition: all 1s linear 1s !important;
+}
+
+.menubarHover:hover > svg {
+   font-size: 3rem;
+}
+
+.menubarHover:hover > h6{
+  display: none;
 } */
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes activeLight {
+  from {
+    color: green;
+    opacity: 1;
   }
-} */
-
-/* body {
-} */
+  to {
+    color: green;
+    opacity: 0;
+  }
+}

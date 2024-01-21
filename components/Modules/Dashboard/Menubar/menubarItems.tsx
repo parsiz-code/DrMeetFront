@@ -6,6 +6,7 @@ import HistoryIcon from "@mui/icons-material/History";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import KeyIcon from "@mui/icons-material/Key";
+import { FcHome , FcCollaboration ,FcClock  ,FcPlanner  } from "react-icons/fc";
 
 const MenubarItems = {
   patient: [

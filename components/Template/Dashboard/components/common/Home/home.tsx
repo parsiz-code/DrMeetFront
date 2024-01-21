@@ -25,7 +25,7 @@ const DashboardHomePage = () => {
     },
   ];
   return (
-    <div className="">
+    <div className="h-[100vh] lg:h-auto">
       <div className={`p-4 rounded-xl ${darkTheme ? 'darkElem' : 'bg-white'} shadow-xl`}>
         <h6 className={`font-bold text-[1.4rem] mb-5 ${darkTheme ? 'text-white' : 'text-black'}`}>تابلو اعلانات</h6>
         <div className="leading-10 px-10">

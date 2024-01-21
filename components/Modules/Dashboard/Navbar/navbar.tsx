@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import {
   Avatar,
   Button,
+  Divider,
   Image,
   Input,
   Popover,
@@ -17,7 +18,7 @@ import { darkThemeHandler } from "@/store/common";
 import Link from "next/link";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 type State = {
   common: {
@@ -32,6 +33,7 @@ interface IProps {
 const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
   const { darkTheme } = useSelector((state: State) => state.common);
   const dispatch = useDispatch();
+  const [showSearch, setShowSearch] = useState<boolean>(false);
 
   const darkModeHandler = () => {
     if (darkTheme) {
@@ -42,14 +44,15 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
   };
 
   return (
-    <div className={`w-full py-3 mb-3`}>
+    <div className={`px-2 w-full py-3 mb-3 border-b-1 border-gray-400 ${darkTheme?'darkElem': 'bg-white'} z-50`}>
       <Grid container>
-        <Grid item xs={12} sm={12} md={9} lg={9} className={`flex items-center`}>
-          <div className="ml-10">
+        <Grid item xs={4} sm={4} md={9} lg={9} className={`flex items-center`}>
+          <div className="lg:ml-10">
             {!isHighAccess && (
               <Image src="/images/drmeet final1.png" width={170} />
             )}
           </div>
+
           <Input
             size={"sm"}
             type="email"
@@ -67,10 +70,21 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
               inputWrapper:
                 "hover:!bg-transparent bg-transparent border-none shadow-none drop-shadow-none outline-0",
             }}
+            className="hidden lg:block"
           />
         </Grid>
-        <Grid item xs={12} sm={12} md={3} lg={3} className={`flex justify-end`}>
+        <Grid item xs={8} sm={8} md={3} lg={3} className={`flex justify-end`}>
           <div className="flex items-center gap-2">
+            <Button
+              isIconOnly
+              className="bg-transparent rounded-full"
+              onClick={() => setShowSearch(!showSearch)}
+            >
+              <SearchIcon
+                className={darkTheme ? "text-white" : "text-gray-500"}
+              />
+            </Button>
+
             <Button
               isIconOnly
               className={`bg-transparent rounded-full`}
@@ -99,7 +113,15 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
                 <Avatar />
               </PopoverTrigger>
               <PopoverContent>
-                <div className="pr-2 pl-8 py-2 flex !flex-col items-start gap-3">
+                <div className="pr-2 py-2 flex !flex-col justify-start items-start gap-4 w-52">
+                  <div className="flex items-center gap-3 py-2">
+                    <Avatar />
+                    <div className="flex !flex-col justify-center">
+                      <h6 className="">دکتر لورم ایپسوم</h6>
+                      <h6 className="text-[0.8rem]">پزشک</h6>
+                    </div>
+                  </div>
+                  <Divider />
                   <div className="">
                     <Link href="/dashboard/profile" className={`py-1 px-2 `}>
                       <AccountCircleIcon />
@@ -120,6 +142,23 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
             </Popover>
           </div>
         </Grid>
+        {showSearch && (
+          <Grid xs={12}>
+            <div className="px-1 py-2 !w-full">
+              <Input
+                size={"sm"}
+                type="email"
+                placeholder="جستجو ..."
+                endContent={
+                  <Button isIconOnly className="bg-transparent">
+                    <SearchIcon />
+                  </Button>
+                }
+                className="w-full"
+              />
+            </div>
+          </Grid>
+        )}
       </Grid>
     </div>
   );
