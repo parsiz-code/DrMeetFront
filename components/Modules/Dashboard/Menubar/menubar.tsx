@@ -39,12 +39,12 @@ const DashboardMenubar: FC<IProps> = ({ lowOrderAccess }) => {
   return (
     <div>
       <div
-        className={`w-full mb-3 py-2 border-b-1 border-gray-400 hidden xl:block ${
+        className={`w-full mb-3 py-2 px-2 border-b-1 border-gray-400 hidden xl:block ${
           darkTheme ? "darkElem" : "bg-white"
         } z-50`}
       >
         <div className="flex items-center gap-5">
-          {!isDoctor ? (
+          {!  isDoctor ? (
             <>
               {MenubarItems.patient.map((item, index) => (
                 <Link
@@ -55,7 +55,7 @@ const DashboardMenubar: FC<IProps> = ({ lowOrderAccess }) => {
                   <h6
                     className={`${
                       darkTheme ? "text-gray-200" : "text-gray-500"
-                    }`}
+                    } link link-underline link-underline-black`}
                   >
                     {item.title}
                   </h6>
@@ -67,7 +67,7 @@ const DashboardMenubar: FC<IProps> = ({ lowOrderAccess }) => {
               {MenubarItems.doctor.map((item, index) => (
                 <Link
                   href={`${item.route}`}
-                  className={`flex !items-center gap-2 py-3 px-2 hover:bg-[#f3f4f4] linkHover rounded-lg`}
+                  className={`flex !items-center gap-2 py-3 px-2 hover:bg-[#f3f4f4] linkHover linkHoveration rounded-lg`}
                 >
                   {item.icon}
                   <h6

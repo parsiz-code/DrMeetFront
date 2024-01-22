@@ -1,0 +1,7 @@
+.hoverButtonUI {
+  transition: 0.25s ease-out !important;
+}
+.hoverIcon {
+  transition: width 0.25s linear;
+  margin-left: 1.5rem;
+}

@@ -6,12 +6,13 @@ import style from "./yourDoctor.module.css";
 import DoctorItem from "./doctorItem";
 import { IGetHomeFeatures } from "@/services/home/interface/getHomeFeatures";
 import { FC } from "react";
+import ButtonUI from "@/components/Modules/ButtonUI/ButtonUI";
 
-interface IProps{
-  features: IGetHomeFeatures[]
+interface IProps {
+  features: IGetHomeFeatures[];
 }
 
-const YourDoctors: FC<IProps> = ({features}) => {
+const YourDoctors: FC<IProps> = ({ features }) => {
   return (
     <div className="relative w-full bg-slate-200">
       <div className="lg:absolute -top-10 w-full">
@@ -34,40 +35,72 @@ const YourDoctors: FC<IProps> = ({features}) => {
           <Grid item xs={12} className="text-center">
             <span className="text-gray-500">فعال ترین پزشکان</span>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} className="p-10 flex !flex-col gap-2 justify-start">
-            <DoctorItem/>
-            <DoctorItem/>
-            <DoctorItem/>
-            <DoctorItem/>
-            <DoctorItem/>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            className="p-10 flex !flex-col gap-2 justify-start"
+          >
+            <DoctorItem />
+            <DoctorItem />
+            <DoctorItem />
+            <DoctorItem />
+            <DoctorItem />
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} className="w-full flex justify-center items-center">
-            <Button
-              href="#"
-              className="bg-[#007dfe] text-white"
-            >
-              لیست فعال ترین پزشکان
-            </Button>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            className="w-full flex justify-center items-center"
+          >
+            <ButtonUI
+              title="لیست فعال ترین پزشکان"
+              className="bg-[#007dfe] text-white w-56 px-4 text-[0.9rem] "
+            />
           </Grid>
         </Grid>
-        <Grid item container xs={12} sm={12} md={6} lg={6} className="mt-14 lg:mt-0">
+        <Grid
+          item
+          container
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          className="mt-14 lg:mt-0"
+        >
           <Grid item xs={12} className="text-center">
             <span className="text-gray-500">جدید ترین پزشکان</span>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} className="p-10 flex !flex-col gap-2 justify-start">
-            <DoctorItem/>
-            <DoctorItem/>
-            <DoctorItem/>
-            <DoctorItem/>
-            <DoctorItem/>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            className="p-10 flex !flex-col gap-2 justify-start"
+          >
+            <DoctorItem />
+            <DoctorItem />
+            <DoctorItem />
+            <DoctorItem />
+            <DoctorItem />
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} className="w-full flex justify-center items-center">
-            <Button
-              href="#"
-              className=" bg-[#007dfe] text-white"
-            >
-              لیست جدید ترین پزشکان
-            </Button>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            className="w-full flex justify-center items-center"
+          >
+            <ButtonUI
+              title="لیست جدید ترین پزشکان"
+              className="bg-[#007dfe] text-white w-56 px-4 text-[0.9rem] "
+            />
           </Grid>
         </Grid>
       </Grid>
