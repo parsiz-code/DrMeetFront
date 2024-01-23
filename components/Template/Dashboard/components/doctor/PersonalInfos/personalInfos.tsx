@@ -1,9 +1,7 @@
-import BannerBar from "./components/bannerBar/bannerBar"
+import BannerBar from "./components/bannerBar/bannerBar";
 
-const PersonalInfos = () => {
-    return(
-        <BannerBar/>
-    )
-}
+const DoctorPersonalInfos = () => {
+  return <BannerBar />;
+};
 
-export default PersonalInfos
+export default DoctorPersonalInfos;

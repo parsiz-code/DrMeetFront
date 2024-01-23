@@ -12,6 +12,11 @@ export const AccountServices = () => {
       .then((res) => res.data);
   };
 
+  const getUserInfo = async () => {
+    const response = await parsizTebAxios.get("User/GetUserInfo");
+    return response.data;
+  };
+
   //   const resetPassword = async (params: IResetPasswordDto) => {
   //     const result = await parsizTebAxios.post<IResBase<ILoginResData>>(
   //       "Account/ResetPassword",
@@ -20,5 +25,5 @@ export const AccountServices = () => {
   //     return result.data;
   //   };
 
-  return { loginRequest };
+  return { loginRequest, getUserInfo };
 };

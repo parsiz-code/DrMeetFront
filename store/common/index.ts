@@ -1,3 +1,4 @@
+import { Dashboard_Type } from "@/utils/models/enum/dashboardType";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface IDoctorMenuModalsSate {
@@ -7,12 +8,7 @@ export interface IDoctorMenuModalsSate {
   manageRoles: boolean;
   setCenterServicesPrice: boolean;
   darkTheme: boolean;
-  dashboardType:
-    | "patient"
-    | "doctor"
-    | "doctorAdmin"
-    | "superAdmin"
-    | undefined;
+  dashboardType: Dashboard_Type | undefined;
 }
 
 const initialCommonState = {
