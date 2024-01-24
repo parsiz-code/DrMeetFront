@@ -6,7 +6,7 @@ import HistoryIcon from "@mui/icons-material/History";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import KeyIcon from "@mui/icons-material/Key";
-import { FcHome , FcCollaboration ,FcClock  ,FcPlanner  } from "react-icons/fc";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const MenubarItems = {
   patient: [
@@ -19,6 +19,11 @@ const MenubarItems = {
       title: "مشاوره های من",
       route: "/dashboard/myConsultation",
       icon: <SupervisorAccountIcon className={`text-gray-400`} />,
+    },
+    {
+      title: "اخذ نوبت",
+      route: "/dashboard/newReserve",
+      icon: <AddCircleIcon className={`text-gray-400`} />,
     },
     {
       title: "نوبت های من",
@@ -34,21 +39,6 @@ const MenubarItems = {
       title: "پرداخت های من",
       route: "/dashboard/myPayments",
       icon: <PaymentsIcon className={`text-gray-400`} />,
-    },
-    {
-      title: "افزایش موجودی",
-      route: "/dashboard/increaseBalance",
-      icon: <CreditCardIcon className={`text-gray-400`} />,
-    },
-    {
-      title: "اطلاعات فردی",
-      route: "/dashboard/personalInformation",
-      icon: <PersonIcon className={`text-gray-400`} />,
-    },
-    {
-      title: "تغییر رمز عبور",
-      route: "/dashboard/changfePassword",
-      icon: <KeyIcon className={`text-gray-400`} />,
     },
   ],
   doctor: [
@@ -70,16 +60,6 @@ const MenubarItems = {
     {
       title: "گزارش حسابداری",
       route: "/dashboard/accountingReport",
-      icon: <KeyIcon className={`text-gray-400`} />,
-    },
-    {
-      title: "اطلاعات فردی",
-      route: "/dashboard/personalInformation",
-      icon: <PersonIcon className={`text-gray-400`} />,
-    },
-    {
-      title: "تغییر رمز عبور",
-      route: "/dashboard/changfePassword",
       icon: <KeyIcon className={`text-gray-400`} />,
     },
   ],

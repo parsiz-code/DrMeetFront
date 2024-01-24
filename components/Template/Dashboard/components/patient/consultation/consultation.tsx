@@ -1,26 +1,12 @@
-import { useSelector } from "react-redux";
-import ConsultationItem from "./consultationItem";
+import ConsultationList from "./components/consultationList";
+import PatientConsultationCtxProvider from "./context";
 
-type State = {
-  common: {
-    darkTheme: boolean;
-  };
-};
-
-const ConsultationList = () => {
-  const { darkTheme } = useSelector((state: State) => state.common);
-
+const Consultation = () => {
   return (
-    <div>
-      <h6 className={`text-center mb-5 text-[1.3rem] ${darkTheme ? "text-white" : "text-black"}`}>
-        مشاوره های من
-      </h6>
-      <ConsultationItem />
-      <ConsultationItem />
-      <ConsultationItem />
-      <ConsultationItem />
-    </div>
+    <PatientConsultationCtxProvider>
+      <ConsultationList/>
+    </PatientConsultationCtxProvider>
   );
 };
 
-export default ConsultationList;
+export default Consultation;

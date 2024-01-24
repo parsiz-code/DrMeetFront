@@ -1,28 +1,28 @@
-import DashboardLayout from "..";
 import Breadcrumb from "@/components/Modules/BreadCrumb";
-import Consultation from "@/components/Template/Dashboard/components/patient/consultation/consultation";
+import DashboardLayout from "..";
 import { Dashboard_Type } from "@/utils/models/enum/dashboardType";
 import { useSelector } from "react-redux";
+import MeyReserves from "@/components/Template/Dashboard/components/patient/reservation/reservation";
 
 type State = {
   common: {
+    darkTheme: boolean;
     dashboardType: Dashboard_Type | undefined;
   };
 };
-
-const MyConsultationPage = () => {
+const MyReservesPage = () => {
   const { dashboardType } = useSelector((state: State) => state.common);
-
   if (dashboardType === Dashboard_Type.patient) {
     return (
       <DashboardLayout>
         <Breadcrumb
-          currentRoute="مشاوره های من"
+          currentRoute="نوبت های من"
           prevRoutes={[{ title: "خانه", path: "/dashboard" }]}
         />
-        <Consultation />
+        <MeyReserves/>
       </DashboardLayout>
     );
   }
 };
-export default MyConsultationPage;
+
+export default MyReservesPage;

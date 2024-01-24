@@ -18,6 +18,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import AppsIcon from "@mui/icons-material/Apps";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import KeyIcon from "@mui/icons-material/Key";
 import { useDispatch, useSelector } from "react-redux";
 import { darkThemeHandler, dashboardTypeHandler } from "@/store/common";
 import Link from "next/link";
@@ -26,6 +27,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { FC, useState } from "react";
 import { useRouter } from "next/router";
 import { Dashboard_Type } from "@/utils/models/enum/dashboardType";
+import { IUserInfo } from "@/services/account/interface/loginResponse";
 
 type State = {
   common: {
@@ -48,7 +50,6 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
   const [showExitModal, setShowExitModal] = useState<boolean>(false);
 
   const darkModeHandler = () => {
-    setShowExitModal(true);
     if (darkTheme) {
       dispatch(darkThemeHandler(false));
     } else {
@@ -57,11 +58,16 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
   };
   const router = useRouter();
 
+  let userInfo: IUserInfo | null = null;
+
+  // Check if the code is running in the browser
+  if (typeof window !== "undefined") {
+    userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+  }
 
   const exitHandler = () => {
-    console.log('ran')
-    setShowExitModal(false)
     router.push("/");
+    setShowExitModal(false);
     dispatch(dashboardTypeHandler(undefined));
     if (typeof window !== "undefined") {
       sessionStorage.clear();
@@ -77,11 +83,11 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
     >
       <Grid container>
         <Grid item xs={4} sm={4} md={9} lg={9} className={`flex items-center`}>
-          <div className="lg:ml-10">
-            {!isHighAccess && (
+          {!isHighAccess && (
+            <div className="lg:ml-10">
               <Image src="/images/drmeet final1.png" width={170} />
-            )}
-          </div>
+            </div>
+          )}
 
           <Input
             size={"sm"}
@@ -124,60 +130,75 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
                 className={`${darkTheme ? "text-white" : "text-gray-500"}`}
               />
             </Button>
-            <Button isIconOnly className={`bg-transparent rounded-full`}>
+            <Button disabled isIconOnly className={`bg-transparent rounded-full`}>
               <AppsIcon
                 className={`${darkTheme ? "text-white" : "text-gray-500"}`}
               />
             </Button>
-            <Button isIconOnly className={`bg-transparent rounded-full`}>
+            <Button disabled isIconOnly className={`bg-transparent rounded-full`}>
               <NotificationsIcon
                 className={`${darkTheme ? "text-white" : "text-gray-500"}`}
               />
             </Button>
-            {!showExitModal && (
-              <Popover
-                placement={"bottom-start"}
-                backdrop={"blur"}
-                color={darkTheme ? "foreground" : "default"}
-                onClose={() => {
-                  if (showExitModal) {
-                    return false;
-                  }
-                }}
-              >
-                <PopoverTrigger className="hover:cursor-pointer">
-                  <Avatar />
-                </PopoverTrigger>
-                <PopoverContent>
-                  <div className="pr-2 py-2 flex !flex-col justify-start items-start gap-4 w-52">
-                    <div className="flex items-center gap-3 py-2">
-                      <Avatar />
-                      <div className="flex !flex-col justify-center">
-                        <h6 className="">دکتر لورم ایپسوم</h6>
-                        <h6 className="text-[0.8rem]">پزشک</h6>
-                      </div>
-                    </div>
-                    <Divider />
-                    <div className="">
-                      <Link href="/dashboard/profile" className={`py-1 px-2 `}>
-                        <AccountCircleIcon />
-                        <span className="mr-2">پروفایل</span>
-                      </Link>
-                    </div>
-                    <div className="">
-                      <Link
-                        href="javascript:void(0);"
-                        onClick={() => setShowExitModal(true)}
-                        className={`text-red-500 py-1 px-2 `}
-                      >
-                        <LogoutIcon />
-                        <span className="mr-2">خروج</span>
-                      </Link>
+            <Popover
+              placement={"bottom-start"}
+              // backdrop={"blur"}
+              color={darkTheme ? "foreground" : "default"}              
+            >
+              <PopoverTrigger className="hover:cursor-pointer">
+                <Avatar />
+              </PopoverTrigger>
+              <PopoverContent>
+                <div className="pr-2 py-2 flex !flex-col justify-start items-start gap-4 w-52">
+                  <div className="flex items-center gap-3 py-2">
+                    <Avatar
+                      src={
+                        userInfo?.picture &&
+                        `data:image/jpeg;base64, ${userInfo?.picture}`
+                      }
+                      name={`${userInfo?.firstName} ${userInfo?.lastName}`}
+                    />
+                    <div className="flex !flex-col justify-center">
+                      <h6 className="">
+                        {userInfo?.firstName} {userInfo?.lastName}
+                      </h6>
+                      <h6 className="text-[0.8rem]">
+                        {userInfo?.userTypes[0].name}
+                      </h6>
                     </div>
                   </div>
-                </PopoverContent>
-              </Popover>
-            )}
+                  <Divider />
+                  <div className="">
+                    <Link
+                      href="/dashboard/personalInformation"
+                      className={`py-1 px-2 `}
+                    >
+                      <AccountCircleIcon />
+                      <span className="mr-2">پروفایل</span>
+                    </Link>
+                  </div>
+                  <div className="">
+                    <Link
+                      href="/dashboard/changePassword"
+                      className={`py-1 px-2 `}
+                    >
+                      <KeyIcon />
+                      <span className="mr-2">تغییر رمز عبور</span>
+                    </Link>
+                  </div>
+                  <div className="">
+                    <Link
+                      href="javascript:void(0);"
+                      onClick={() => setShowExitModal(true)}
+                      className={`text-red-500 py-1 px-2 `}
+                    >
+                      <LogoutIcon />
+                      <span className="mr-2">خروج</span>
+                    </Link>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
         </Grid>
         {showSearch && (
@@ -202,8 +223,8 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
         <Modal
           isOpen={showExitModal}
           placement="center"
-          backdrop="blur"
           onOpenChange={setShowExitModal}
+          className="!z-[10000000]"
           classNames={{
             base: darkTheme ? "darkBG border border-white" : "text-gray-500",
             closeButton: "hidden",
@@ -226,10 +247,7 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
                   <Button color="primary" variant="light" onPress={onClose}>
                     انصراف
                   </Button>
-                  <Button
-                    color="danger"
-                    onClick={() => exitHandler()}
-                  >
+                  <Button color="danger" onClick={() => exitHandler()}>
                     خروج
                   </Button>
                 </ModalFooter>

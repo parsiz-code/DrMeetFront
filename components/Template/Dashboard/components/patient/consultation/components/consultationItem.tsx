@@ -1,4 +1,4 @@
-import { toPersianDigits } from "@/helper/dateTimeHelper";
+import { ToShamsiDate, toPersianDigits } from "@/helper/dateTimeHelper";
 import { Grid } from "@mui/material";
 import { Avatar, Button } from "@nextui-org/react";
 import Link from "next/link";
@@ -12,7 +12,7 @@ interface IProps {
   avatarPhoto?: string;
   title?: string;
   doctor?: string;
-  requestDate?: Date;
+  requestDate?: string;
   answerStatus?: boolean;
   openingStatus?: boolean;
 }
@@ -44,7 +44,7 @@ const ConsultationItem: FC<IProps> = ({
           <Grid item xs={12} sm={12} md={6} lg={6}>
             <div className="flex items-center gap-10">
               <Avatar
-                src="https://avatar.iran.liara.run/public"
+                src={`data:image/png;base64, ${avatarPhoto}`}
                 size="lg"
               />
               <div className="">
@@ -62,14 +62,14 @@ const ConsultationItem: FC<IProps> = ({
                     darkTheme ? "text-gray-400" : "text-gray-500"
                   } text-[0.8rem]`}
                 >
-                  دکتر سید سجاد حسینی مقدم
+                  {doctor}
                 </h6>
               </div>
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6} className="mt-4 lg:mt-0" alignItems={'center'}>
             <div className="flex justify-between items-center">
-              <div className="flex justify-center items-center gap-20">
+              <div className="flex justify-center items-center md:gap-20 !flex-col md:!flex-row">
                 <div className="flex items-center pt-2 gap-3">
                   <h6
                     className={`${
@@ -83,7 +83,7 @@ const ConsultationItem: FC<IProps> = ({
                       darkTheme ? "text-white" : "text-gray-500"
                     } text-[0.9rem]`}
                   >
-                    {toPersianDigits("1402/11/02")}
+                    {ToShamsiDate(requestDate , 'date')}
                   </h6>
                 </div>
                 <div className="flex items-center pt-2 gap-2">
@@ -96,7 +96,7 @@ const ConsultationItem: FC<IProps> = ({
                       پاسخ داده شده
                     </Button>
                   )}
-                  <Button className="text-[0.8rem] bg-blue-500 text-white">
+                  <Button className="text-[0.8rem] bg-blue-500 text-white" isDisabled={!openingStatus && true}>
                     ثبت نظر
                   </Button>
                 </div>
