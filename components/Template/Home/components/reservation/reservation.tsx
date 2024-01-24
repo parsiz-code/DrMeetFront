@@ -10,6 +10,7 @@ import {
 import { Button, Input } from "@nextui-org/react";
 import React, { useState } from "react";
 import style from './style.module.css'
+import ButtonUI from "@/components/Modules/ButtonUI/ButtonUI";
 
 interface IItem {
   label: string;
@@ -118,7 +119,11 @@ const Reservation = () => {
             </FormControl>
             <Input type="text" placeholder="پیام شما" size="sm" />
 
-            <Button className="bg-[#a3d1ff] px-20 py-5">رزرو قرار ملاقات</Button>
+            <ButtonUI
+              title="رزرو قرار ملاقات"
+              className="bg-[#a3d1ff] text-black w-48 text-[0.9rem] "
+              iconClassName="!bg-[#fff] text-blue-500"
+            />
           </div>
         </Grid>
       </Grid>

@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { Accordion, AccordionItem, Button } from "@nextui-org/react";
 import React from "react";
 import QuestionMarkOutlinedIcon from "@mui/icons-material/QuestionMarkOutlined";
+import ButtonUI from "@/components/Modules/ButtonUI/ButtonUI";
 
 function Question() {
   return (
@@ -19,9 +20,10 @@ function Question() {
             طرح‌نما (به انگلیسی: Lorem ipsum) متنی ساختگی و بدون معنی است که
             برای امتحان فونت و یا پر کردن فضا در یک طراحی گرافیکی و
           </p>
-          <Button href="#" className="py-3 px-10 bg-[#007dfe] text-white">
-            به ما بپیوندید
-          </Button>
+          <ButtonUI
+              title="به ما بپیوندید"
+              className="bg-[#007dfe] text-white w-48 text-[0.9rem] "
+            />
         </Grid>
         <Grid item xs={12} sm={12} md={6.5} lg={6.5} className="mt-10 lg:mt-0">
           <Accordion isCompact>

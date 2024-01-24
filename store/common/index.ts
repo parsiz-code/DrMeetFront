@@ -1,3 +1,4 @@
+import { Dashboard_Type } from "@/utils/models/enum/dashboardType";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface IDoctorMenuModalsSate {
@@ -6,6 +7,8 @@ export interface IDoctorMenuModalsSate {
   organization: boolean;
   manageRoles: boolean;
   setCenterServicesPrice: boolean;
+  darkTheme: boolean;
+  dashboardType: Dashboard_Type | undefined;
 }
 
 const initialCommonState = {
@@ -13,6 +16,8 @@ const initialCommonState = {
   patientId: undefined as number | undefined,
   doctorMenuItemsState: { centerSetting: false } as IDoctorMenuModalsSate,
   showLogin: false,
+  darkTheme: false,
+  dashboardType: undefined,
 };
 
 export const commonSlice = createSlice({
@@ -34,6 +39,12 @@ export const commonSlice = createSlice({
     showLoginHandler: (state, action: PayloadAction<boolean>) => {
       state.showLogin = action.payload;
     },
+    darkThemeHandler: (state, action: PayloadAction<boolean>) => {
+      state.darkTheme = action.payload;
+    },
+    dashboardTypeHandler: (state, action: PayloadAction<dashboardType>) => {
+      state.dashboardType = action.payload;
+    },
   },
 });
 
@@ -42,6 +53,8 @@ export const {
   patientIdHandler,
   doctorMenuModalStateHandler,
   showLoginHandler,
+  darkThemeHandler,
+  dashboardTypeHandler,
 } = commonSlice.actions;
 
 export default commonSlice.reducer;

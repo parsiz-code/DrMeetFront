@@ -1,3 +1,4 @@
+import ButtonUI from "@/components/Modules/ButtonUI/ButtonUI";
 import { Box, Grid } from "@mui/material";
 import { Button, Input, Link } from "@nextui-org/react";
 import Image from "next/image";
@@ -33,18 +34,30 @@ const Header = () => {
               width={200}
               height={200}
             />
-            <Link
+            {/* <Link
               href="/doctors"
               className="bg-[#00DAF5] text-white w-48 mb-2 text-[0.9rem] flex justify-center items-center py-2 rounded-xl"
             >
               نمایش کل پزشکان
-            </Link>
-            <Link
+            </Link> */}
+            <ButtonUI
+              link="/doctors"
+              title="نمایش کل پزشکان"
+              className="bg-[#00DAF5] text-white border border-[#00DAF5] w-48 text-[0.9rem] mb-2 "
+              iconClassName="bg-white text-[#00DAF5]"
+            />
+            <ButtonUI
+              link=""
+              title="نظردهی به پزشک"
+              className="bg-transparent text-[#00DAF5] border border-[#00DAF5] w-48 text-[0.9rem] "
+              iconClassName="bg-[#00DAF5] text-white"
+            />
+            {/* <Link
               href=""
               className="bg-transparent text-[#00DAF5] border border-[#00DAF5] w-48 text-[0.9rem] flex justify-center items-center py-2 rounded-xl"
             >
               نظردهی به پزشک
-            </Link>
+            </Link> */}
           </Box>
         </Grid>
         <Grid item xs={12} sm={12} md={7} lg={7} className="mt-4 lg:mt-0">

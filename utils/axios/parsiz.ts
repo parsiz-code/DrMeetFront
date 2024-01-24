@@ -1,9 +1,11 @@
+import { ParsizDefaultHeaders } from "@/services/base";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 export const useParsizAxios = () => {
   const parsizTebAxios = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BASE_URL_PARSIZTEB,
+    baseURL: process.env.NEXT_PUBLIC_BASE_URL_PARSIZTEB,   
+    headers: ParsizDefaultHeaders(),
   });
 
   parsizTebAxios.interceptors.response.use(

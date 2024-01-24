@@ -7,10 +7,11 @@ import {
   Select,
   SelectItem,
 } from "@nextui-org/react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { toPersianDigits } from "@/helper/dateTimeHelper";
+import { useRouter } from "next/router";
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -29,6 +30,8 @@ const RegisterPage = () => {
     useState<string>("");
 
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const router = useRouter()
 
   //   const validateEmail = (value: string) =>
   //     value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
@@ -51,6 +54,19 @@ const RegisterPage = () => {
   }, [repeatPasswordInputValue]);
 
   //   event: React.ChangeEvent<HTMLInputElement>
+
+  let token: string | null = "";
+
+  // Check if the code is running in the browser
+  if (typeof window !== "undefined") {
+    token = sessionStorage.getItem("token");
+  }
+
+  useEffect(() => {
+    if (token) {
+      router.push("/dashboard");
+    }
+  }, []);
 
   return (
     <div className="h-[100vh] bg-gradient-to-bl from-[#3dffbf] to-blue-500 text-center">
