@@ -31,7 +31,7 @@ const ConsultationList = () => {
 
       {loading && <DataWaiter />}
 
-      {allCosultationData?.length <= 0 && (
+      {!allCosultationData && (
         <NoFoundData title="مشاوره ای جهت نمایش وجود ندارد." />
       )}
 

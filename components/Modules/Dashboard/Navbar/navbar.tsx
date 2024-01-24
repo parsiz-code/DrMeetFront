@@ -130,12 +130,12 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
                 className={`${darkTheme ? "text-white" : "text-gray-500"}`}
               />
             </Button>
-            <Button disabled isIconOnly className={`bg-transparent rounded-full`}>
+            <Button isIconOnly className={`bg-transparent rounded-full`}>
               <AppsIcon
                 className={`${darkTheme ? "text-white" : "text-gray-500"}`}
               />
             </Button>
-            <Button disabled isIconOnly className={`bg-transparent rounded-full`}>
+            <Button isIconOnly className={`bg-transparent rounded-full`}>
               <NotificationsIcon
                 className={`${darkTheme ? "text-white" : "text-gray-500"}`}
               />
@@ -143,7 +143,8 @@ const DashboardNavbar: FC<IProps> = ({ isHighAccess }) => {
             <Popover
               placement={"bottom-start"}
               // backdrop={"blur"}
-              color={darkTheme ? "foreground" : "default"}              
+              color={darkTheme ? "foreground" : "default"}
+              
             >
               <PopoverTrigger className="hover:cursor-pointer">
                 <Avatar />

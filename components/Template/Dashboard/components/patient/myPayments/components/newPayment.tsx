@@ -20,11 +20,11 @@ const NewPayment = () => {
         </h6>
         <FcMoneyTransfer className="h-20"/>
         <div className="">
-          <Select label="مقادیر پیشنهادی">
+          {/* <Select label="مقادیر پیشنهادی">
             <SelectItem value={1}>test 1</SelectItem>
             <SelectItem value={2}>test 2</SelectItem>
             <SelectItem value={3}>test 3</SelectItem>
-          </Select>
+          </Select> */}
         </div>
       </div>
     </Grid>

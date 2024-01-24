@@ -42,7 +42,7 @@ export const commonSlice = createSlice({
     darkThemeHandler: (state, action: PayloadAction<boolean>) => {
       state.darkTheme = action.payload;
     },
-    dashboardTypeHandler: (state, action: PayloadAction<dashboardType>) => {
+    dashboardTypeHandler: (state, action: PayloadAction<Dashboard_Type | undefined>) => {
       state.dashboardType = action.payload;
     },
   },

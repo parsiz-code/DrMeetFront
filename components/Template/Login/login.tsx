@@ -222,7 +222,7 @@ const LoginPage = () => {
                     }}
                   />
                   <Input
-                    type="password"
+                    type={isVisible ? "text" : "password"}
                     label="کلمه عبور"
                     size="sm"
                     required
@@ -230,7 +230,7 @@ const LoginPage = () => {
                     value={passwordInputValue}
                     onValueChange={setPasswordInputValue}
                     isInvalid={isInvalidPassword}
-                    color={isInvalidPassword ? "danger" : ""}
+                    color={isInvalidPassword ? "danger" : undefined}
                     errorMessage={
                       isInvalidPassword &&
                       toPersianDigits("حداقل 8 حرف میباشد!")
@@ -248,7 +248,7 @@ const LoginPage = () => {
                         )}
                       </button>
                     }
-                    type={isVisible ? "text" : "password"}
+                    
                     classNames={{
                       input: "text-center",
                     }}

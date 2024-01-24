@@ -17,7 +17,7 @@ const useGetUserInfo = () => {
 
   const { getUserInfo } = AccountServices();
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.user.token);
+  // const token = useSelector((state) => state.user.token);
 
   const getUserInfoReq = useCallback(async () => {
     const res = await getUserInfo();
@@ -25,10 +25,10 @@ const useGetUserInfo = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (token) getUserInfoReq();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token]);
+  // useEffect(() => {
+  //   if (token) getUserInfoReq();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [token]);
 };
 
 export default useGetUserInfo;
