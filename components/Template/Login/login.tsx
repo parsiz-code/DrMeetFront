@@ -230,7 +230,7 @@ const LoginPage = () => {
                     value={passwordInputValue}
                     onValueChange={setPasswordInputValue}
                     isInvalid={isInvalidPassword}
-                    color={isInvalidPassword ? "danger" : ""}
+                    color={isInvalidPassword ? "danger" : undefined}
                     errorMessage={
                       isInvalidPassword &&
                       toPersianDigits("حداقل 8 حرف میباشد!")

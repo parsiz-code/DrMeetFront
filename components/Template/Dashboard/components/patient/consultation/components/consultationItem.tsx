@@ -12,7 +12,7 @@ interface IProps {
   avatarPhoto?: string;
   title?: string;
   doctor?: string;
-  requestDate?: string;
+  requestDate?: Date;
   answerStatus?: boolean;
   openingStatus?: boolean;
 }
@@ -83,7 +83,7 @@ const ConsultationItem: FC<IProps> = ({
                       darkTheme ? "text-white" : "text-gray-500"
                     } text-[0.9rem]`}
                   >
-                    {ToShamsiDate(requestDate , 'date')}
+                    {ToShamsiDate(requestDate! , 'date')}
                   </h6>
                 </div>
                 <div className="flex items-center pt-2 gap-2">

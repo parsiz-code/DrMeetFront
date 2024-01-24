@@ -153,7 +153,7 @@ const ReservesTable = () => {
       )}
 
       {loading && <DataWaiter />}
-      {allReservedData?.length <= 0 && (
+      {!allReservedData && (
         <NoFoundData title="تاکنون سابقه مراجعه ای نداشته اید." />
       )}
     </div>
