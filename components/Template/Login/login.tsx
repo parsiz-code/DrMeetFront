@@ -222,7 +222,7 @@ const LoginPage = () => {
                     }}
                   />
                   <Input
-                    type="password"
+                    type={isVisible ? "text" : "password"}
                     label="کلمه عبور"
                     size="sm"
                     required
@@ -248,7 +248,7 @@ const LoginPage = () => {
                         )}
                       </button>
                     }
-                    type={isVisible ? "text" : "password"}
+                    
                     classNames={{
                       input: "text-center",
                     }}

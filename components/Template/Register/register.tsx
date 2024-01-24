@@ -189,7 +189,7 @@ const RegisterPage = () => {
                 </Select>
 
                 <Input
-                  type="password"
+                  type={isVisible ? "text" : "password"}
                   label="رمز عبور"
                   size="sm"
                   required
@@ -197,7 +197,7 @@ const RegisterPage = () => {
                   value={passwordInputValue}
                   onValueChange={setPasswordInputValue}
                   isInvalid={isInvalidPassword}
-                  color={isInvalidPassword ? "danger" : ""}
+                  color={isInvalidPassword ? "danger" : undefined}
                   errorMessage={
                     isInvalidPassword && toPersianDigits("حداقل 3 حرف میباشد!")
                   }
@@ -214,7 +214,6 @@ const RegisterPage = () => {
                       )}
                     </button>
                   }
-                  type={isVisible ? "text" : "password"}
                   classNames={{
                     input: "text-center text-black",
                   }}
