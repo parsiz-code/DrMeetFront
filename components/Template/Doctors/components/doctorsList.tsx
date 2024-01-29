@@ -17,6 +17,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useDoctorsCtx } from "../context";
+import FilterSideBar from "./filterSide";
 
 const DoctorList = () => {
   const [openLocationModal, setOpenLocationModal] = useState<boolean>(false);
@@ -47,7 +48,7 @@ const DoctorList = () => {
 
   return (
     <div>
-      <div className="px-3 lg:px-64 !my-4">
+      {/* <div className="px-3 lg:px-64 !my-4">
         <div className="flex justify-center items-center bg-[#f3f4f6] rounded-2xl px-3 gap-3 shadow-xl">
           <Input
             size={"sm"}
@@ -124,8 +125,12 @@ const DoctorList = () => {
             />
           )}
         </div>
-      </div>
-      {allDoctorsDataList.length > 0 ? (
+      </div> */}
+      <Grid container>
+        <FilterSideBar/>
+        
+      </Grid>
+      {/* {allDoctorsDataList.length > 0 ? (
         <>
           <Grid container>
             {allDoctorsDataList.map((item, index) => (
@@ -215,9 +220,9 @@ const DoctorList = () => {
             </div>
           )}
         </>
-      )}
+      )} */}
 
-      <Modal
+      {/* <Modal
         backdrop={"blur"}
         isOpen={openLocationModal}
         onClose={() => setOpenLocationModal(false)}
@@ -296,7 +301,7 @@ const DoctorList = () => {
             </>
           )}
         </ModalContent>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };
