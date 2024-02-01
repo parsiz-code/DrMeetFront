@@ -18,6 +18,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useDoctorsCtx } from "../context";
 import FilterSideBar from "./filterSide";
+import DoctorSide from "./doctorSide";
 
 const DoctorList = () => {
   const [openLocationModal, setOpenLocationModal] = useState<boolean>(false);
@@ -128,7 +129,7 @@ const DoctorList = () => {
       </div> */}
       <Grid container>
         <FilterSideBar/>
-        
+        <DoctorSide/>
       </Grid>
       {/* {allDoctorsDataList.length > 0 ? (
         <>

@@ -68,9 +68,9 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
     []
   );
   const [allStateListArray, setAllStateListArray] = useState<any[]>([]);
-  const [selectedState, setSelectedState] = useState<any>();
+  const [selectedState, setSelectedState] = useState<string>();
   const [allCityListArray, setAllCityListArray] = useState<any[]>([]);
-  const [selectedCity, setSelectedCity] = useState<any>();
+  const [selectedCity, setSelectedCity] = useState<string>();
   const [allExperties, setAllExperties] = useState<any[]>([]);
   const [selectExperty, setSelectExperty] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -124,7 +124,6 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
         _.uniq(data.list.map((doctor) => doctor.expertise))
       );
       setAllExperties(uniqueSortedExperties);
-      console.log(uniqueSortedExperties);
     } finally {
       setLoading(false);
     }
@@ -173,26 +172,19 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   useEffect(() => {
     createUniqueCityList(selectedState);
-    console.log(selectedState);
   }, [selectedState]);
 
-  const createUniqueCityList = (selectedStateName: string) => {
-    const filteredCities = allStateListArray.filter(
-      (city) => city.stateName === selectedStateName
-    );
-    const uniqueCities = _.uniqBy(filteredCities, "cityName");
-
-    const cityList: allCities[] = _.map(uniqueCities, (city, index) => ({
-      id: city.id,
-      cityName: city.name,
-      value: city.name,
-    }));
-    const allCitiesList = _.concat(
-      [{ id: 0, cityName: "همه شهرها", value: "همه شهرها" }],
-      cityList
-    );
-
-    setAllCityListArray(allCitiesList);
+  const createUniqueCityList = async (selectedStateName: string) => {
+    try {
+      const { data } = await getAllCitiesAsync();
+      const filteredCities = data.filter(
+        (city) => city.stateName === selectedStateName
+      );
+      const uniqueCities = _.uniqBy(filteredCities, "name");
+      setAllCityListArray(uniqueCities);
+    } catch (err) {
+      throw err;
+    }
   };
 
   const ctxValue: ICtxValue = {

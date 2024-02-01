@@ -1,5 +1,7 @@
 import { Grid, Slider, Switch } from "@mui/material";
 import {
+  Autocomplete,
+  AutocompleteItem,
   Checkbox,
   CheckboxGroup,
   Divider,
@@ -61,7 +63,11 @@ const FilterSideBar = () => {
     setSelectedCity,
     selectedCity,
     selectedState,
-    allExperties
+    allExperties,
+    setSearchInputValue,
+    searchInputValue,
+    selectExperty,
+    setSelectExperty,
   } = useDoctorsCtx();
 
   const centerType: center[] = [
@@ -78,8 +84,20 @@ const FilterSideBar = () => {
       value: "private",
     },
   ];
+
+  const stateChangeHandler = (state) => {
+    setSelectedState(state);
+  };
+
+  const cityChangeHandler = (city) => {
+    setSelectedCity(city);
+  };
+
+  const expertyChangeHandler = (experty) => {
+    setSelectExperty(experty);
+  };
   return (
-    <Grid item xs={12} sm={12} md={3} lg={3} className="p-2">
+    <Grid item xs={12} sm={12} md={3.5} lg={3.5} className="p-2">
       <div className="border rounded-2xl py-2">
         <h3 className="text-center py-2 mb-2">جستجو کنید</h3>
         <Grid container className="">
@@ -120,9 +138,14 @@ const FilterSideBar = () => {
           <Grid xs={9}>
             <Input
               type="text"
+              label="جستجو بر اساس نام پزشک"
               size="sm"
               classNames={{
                 inputWrapper: "h-10",
+              }}
+              value={searchInputValue}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setSearchInputValue(event.target.value);
               }}
             />
           </Grid>
@@ -132,25 +155,18 @@ const FilterSideBar = () => {
             استان
           </Grid>
           <Grid xs={9}>
-            <Select
+            <Autocomplete
               size="sm"
-              defaultSelectedKeys={["همه استان‌ها"]}
-              classNames={{
-                // selectorIcon:
-                innerWrapper:
-                  "flex justify-center items-center flex-row-reverse",
-                value: "text-right",
-                selectorIcon: "hidden",
-              }}
-              value={selectedState}
-              onChange={(e) => setSelectedState(e.target.value)}
+              defaultSelectedKey="همه استان‌ها"
+              selectedKey={selectedState}
+              onSelectionChange={stateChangeHandler}
             >
               {allStateListArray.map((state) => (
-                <SelectItem key={state.value} value={state.value}>
+                <AutocompleteItem key={state.value} value={state.value}>
                   {state.stateName}
-                </SelectItem>
+                </AutocompleteItem>
               ))}
-            </Select>
+            </Autocomplete>
           </Grid>
         </Grid>
         <Grid container className="px-2 my-2" alignItems={"center"}>
@@ -158,24 +174,20 @@ const FilterSideBar = () => {
             شهر
           </Grid>
           <Grid xs={9}>
-            <Select
+            <Autocomplete
               size="sm"
-              defaultSelectedKeys={["همه شهرها"]}
-              isDisabled={selectedState === "همه استان‌ها" ? true : false}
-              classNames={{
-                // selectorIcon:
-                innerWrapper:
-                  "flex justify-center items-center flex-row-reverse",
-                value: "text-right",
-                selectorIcon: "hidden",
-              }}
+              label="شهر مورد نظر خود را انتخاب کنید"
+              isDisabled={selectedState ? false : true}
+              selectedKey={selectedCity}
+              onSelectionChange={cityChangeHandler}
             >
-              {allCityListArray.map((state) => (
-                <SelectItem key={state.value} value={state.value}>
-                  {state.stateName}
-                </SelectItem>
-              ))}
-            </Select>
+              {allCityListArray.length &&
+                allCityListArray.map((city) => (
+                  <AutocompleteItem key={city.id} value={city.name}>
+                    {city.name}
+                  </AutocompleteItem>
+                ))}
+            </Autocomplete>
           </Grid>
         </Grid>
         <Grid container className="px-2 my-2" alignItems={"center"}>
@@ -183,22 +195,17 @@ const FilterSideBar = () => {
             تخصص
           </Grid>
           <Grid xs={9}>
-            <Select
-              size="sm"
-              classNames={{
-                // selectorIcon:
-                innerWrapper:
-                  "flex justify-center items-center flex-row-reverse",
-                value: "text-right",
-                selectorIcon: "hidden",
-              }}
+            <Autocomplete
+              label="تخصص مورد نظر خود را انتخاب کنید"
+              selectedKey={selectExperty}
+              onSelectionChange={expertyChangeHandler}
             >
-              {allExperties.map((item) => (
-                <SelectItem key={item} value={item}>
+              {allExperties.map((item, index) => (
+                <AutocompleteItem key={index} value={item}>
                   {item}
-                </SelectItem>
+                </AutocompleteItem>
               ))}
-            </Select>
+            </Autocomplete>
           </Grid>
         </Grid>
         <Grid container className="px-2 my-2" alignItems={"center"}>
@@ -235,6 +242,7 @@ const FilterSideBar = () => {
           </Grid>
           <Grid xs={9}>
             <Select
+              label="نوع مرکز مورد نظر خود را انتخاب کنید"
               size="sm"
               defaultSelectedKeys={["all"]}
               classNames={{
