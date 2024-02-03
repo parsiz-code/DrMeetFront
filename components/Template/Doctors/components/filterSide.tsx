@@ -2,16 +2,19 @@ import { Grid, Slider, Switch } from "@mui/material";
 import {
   Autocomplete,
   AutocompleteItem,
+  Button,
   Checkbox,
   CheckboxGroup,
   Divider,
   Input,
   Select,
   SelectItem,
+  Spinner,
 } from "@nextui-org/react";
 import { useState } from "react";
 import { useDoctorsCtx } from "../context";
 import { CustomCheckbox } from "@/components/Modules/CheckBoxUi/CheckBoxUi";
+import SearchIcon from "@mui/icons-material/Search";
 
 interface center {
   title: string;
@@ -68,6 +71,7 @@ const FilterSideBar = () => {
     searchInputValue,
     selectExperty,
     setSelectExperty,
+    getDoctors,
   } = useDoctorsCtx();
 
   const centerType: center[] = [
@@ -142,7 +146,13 @@ const FilterSideBar = () => {
               size="sm"
               classNames={{
                 inputWrapper: "h-10",
+                input: "mt-2",
               }}
+              endContent={
+                <button className="" onClick={() => getDoctors()}>
+                  <SearchIcon />
+                </button>
+              }
               value={searchInputValue}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setSearchInputValue(event.target.value);
