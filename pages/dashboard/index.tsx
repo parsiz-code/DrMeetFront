@@ -84,7 +84,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             dashboardType === Dashboard_Type.admin ||
             dashboardType === Dashboard_Type.superAdmin
               ? "px-2 lg:px-10"
-              : "px-2 lg:px-80"
+              : "px-2 lg:px-52"
           } w-full`}
         >
           <>

@@ -16,7 +16,7 @@ export const DoctorServices = () => {
     return res.data;
   };
 
-  const getAllCitiesAsync = async (params: IGetCities) => {
+  const getAllCitiesAsync = async (params?: IGetCities) => {
     const res = await parsizTebAxios.get<IResBase<IGetCitiesResponse[]>>(
       "City/GetCities" , {params}
     );
