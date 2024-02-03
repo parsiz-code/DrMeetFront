@@ -74,7 +74,7 @@ const DoctorsCtxProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [allExperties, setAllExperties] = useState<any[]>([]);
   const [selectExperty, setSelectExperty] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(12);
+  const [pageSize, setPageSize] = useState<number>(6);
   const [searchInputValue, setSearchInputValue] = useState<string>();
   const [searchCityInputValue, setSearchCityInputValue] = useState<string>("");
   // const [selectedCity, setSelectedCity] = useState<
